@@ -2,15 +2,37 @@
 
 shop-cart-template
 
-# STYLiSH
+## Features List
 
-An E-commerce website practice
+- nav-bar would swith to icon list on mobile size.
+- stepper control by three status.
+- form container swith by two buttons.
+- shopping-cart has CRUD function.
+- footer wouldn't show up on mobile size.
+- switch light and dark mode.
 
-## Demo Account
+## Prerequisites
 
-Link : https://stylish-ecommerce-demo.web.app/ </br>
+- Node.js
+- Express v4.17.1
+- Express-handlebars v5.3.4 - template engine
 
-### Technologies
+## Installation
+
+To run the project locally
+
+- Please clone it.
+  ```bash
+  git clone https://github.com/muchuanhung/Resturant_List.git
+  ```
+- Install dependencies
+  ```bash
+  npm install
+  ```
+- Running Server (if server start to run, terminal will show: "Express running on the port 3000")
+
+  - node.js -> <code>$ npm run start</code>
+  - nodemon -> <code>$ npm run dev</code>
 
 **Front-End Skills**
 
@@ -19,26 +41,15 @@ Link : https://stylish-ecommerce-demo.web.app/ </br>
 - JavaScript (ES6)
 - Flex/Grid
 - RWD
-  **Cloud Service**
-- Firebase
-  - Hoisting
-    **Lint Tools**
-- ESLint
-- Prettier
 
 ## Website Function Demo :
 
 ** Functions**
 
-- Products dispaly by catagories
-- Campaign slider
-- Infinit scroll
 - Shopping cart
 - Online payment system
-- Member system
 
-<img src="./readmeImg/performance.gif">
+## Prerequisites
 
-## Contact
-
-Email: ericfei0521@gmail.com
+- Node.js
+- Express v4.17.1
