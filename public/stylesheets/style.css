@@ -1,0 +1,68 @@
+/* --- reset CSS --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* --- CSS Start --- */
+body {
+  width: 100vw;
+  height: 100vh;
+  font-family: "Noto Sans TC", sans-serif;
+  font-size: 14px;
+}
+
+header {
+  width: 100%;
+  min-height: 70px;
+  padding: 10px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+nav ul {
+  display: flex;
+  gap: 15px;
+}
+
+.action {
+  height: 150px;
+  padding: 8px 15px;
+  border-radius: 5px;
+  background-color: #ddd;
+  font-weight: 600;
+}
+
+.action:hover {
+  background-color: #bbb;
+}
+
+.action:active {
+  background-color: #888;
+  color: #fcfcfc;
+}
+
+.home > .action {
+  padding: 8px 20px;
+  font-size: 20px;
+  letter-spacing: 1.3px;
+}
+
+main {
+  padding: 50px;
+  font-size: 2rem;
+  color: rgb(41, 41, 41);
+}

@@ -15,7 +15,6 @@ shop-cart-template
 
 - Node.js
 - Express v4.17.1
-- Express-handlebars v5.3.4 - template engine
 
 ## Installation
 
@@ -23,7 +22,7 @@ To run the project locally
 
 - Please clone it.
   ```bash
-  git clone https://github.com/muchuanhung/Resturant_List.git
+  git clone https://github.com/muchuanhung/alpha_shop_cart.git
   ```
 - Install dependencies
   ```bash
@@ -34,22 +33,13 @@ To run the project locally
   - node.js -> <code>$ npm run start</code>
   - nodemon -> <code>$ npm run dev</code>
 
-**Front-End Skills**
+## Development by
 
 - HTML
 - CSS
 - JavaScript (ES6)
 - Flex/Grid
 - RWD
-
-## Website Function Demo :
-
-** Functions**
-
-- Shopping cart
-- Online payment system
-
-## Prerequisites
-
 - Node.js
-- Express v4.17.1
+- Express
+- Nodemon
