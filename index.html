@@ -8,7 +8,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="./public/stylesheets/style.css">
+  <link rel="stylesheet" href="public/stylesheets/style.css">
   <title>Alpha_shop_cart</title>
 </head>
 
@@ -42,8 +42,11 @@
             <li class="nav-btn"><a href="" class="nav-link"><img src="https://i.ibb.co/JQTxGmS/icon-mode-light.png"></i></a></li>
           </ul>
       </nav>  
+  </header>
+  <!--header end-->
 
    <!-- main container -->
+  <main id="main-content">
   <div class="container">
     <div class="title">
       <h2>結帳</h2>
@@ -68,8 +71,222 @@
               </div>
             </div>
           </div>
+  
+    <!--form-->
+      <div class="container form-container">
+        <form id="a-form">
+          <div class="form-content">
+            <!--form - delivery info-->
+            <div class="part">
+              <h4 class="form-header title-grid">寄件地址</h4>
+              <div class="form-row part-title"><label>稱謂</label>
+                <div class="select-wrapper">
+                  <select name="a-type" id="a-type" required>
+                    <option value="mister">先生</option>
+                    <option value="miss">小姐</option>
+                    <option value="none">不拘</option>
+                  </select>
+                </div>
+            </div>
+            <div class="form-row part-name"><label for="">姓名</label><input id="name" type="text" class="w-100" placeholder="請輸入姓名">
+            </div>
+            <div class="form-row part-phone"><label for="">電話</label><input id="phone" type="text" class="w-100"
+                placeholder="請輸入電話"></div>
+            <div class="form-row part-email"><label for="">Email</label><input id="email" type="text" class="w-100"
+                placeholder="請輸入電子郵件"></div>
+            <div class="form-row part-city"><label for="">縣市</label>
+              <div class="select-wrapper"><select name="a-type" id="a-location" required>
+                  <option value="" disabled selected>請選擇縣市</option>
+                        <option value="">北部</option>
+												<option value="">中部</option>
+												<option value="">南部</option>
+												<option value="">不拘</option>
+                </select>
+              </div>
+              <div class="form-row part-address"><label for="">地址</label><input id="address" type="text" class="w-100"
+                  placeholder="請輸入地址"></div>
+            </div>
 
-
+              <!--form - shipping address-->
+              <div class="part-container d-none">
+                <div class="part">
+                  <h4 class="form-header title-grid">運送方式</h4>
+                  <div class="form-row part-shipping">
+                    <!--shipping method01-->
+                    <div class="shipping-method">
+                      <input type="radio" name="shipping-method" value="standard" id="standard" class="shipping-method-radio" checked>
+                      <label for="standard" class="shipping-method-name">
+                        <h4 class="shipping-name">標準配送</h4>
+                        <p class="shipping-time">約 3~7 個工作天</p>
+                      </label>
+                      <span class="shipping-fee">免費</span>
+                    </div>
+                    <!--shipping method02-->
+                    <div class="shipping-method">
+                      <input type="radio" name="shipping-method" value="dhl" id="dhl" class="shipping-method-radio">
+                      <label for="dhl" class="shipping-method-name d-flex flex-column justify-content-center">
+                        <h4 class="shipping-name">DHL 貨運</h4>
+                        <p class="shipping-time">48小時內送達</p>
+                      </label>
+                      <span class="shipping-fee">$500</span>
+                    </div>
+               
+              <!--form - payment metod-->
+              <div class="part-container d-none">
+                <div class="part">
+                  <h4 class="form-header title-grid">付款資訊</h4>
+                  <div class="form-row part-cardholder-name"><label for="">持卡人姓名</label><input id="card-name" type="text"
+                      class="w-100" placeholder="John Doe"></div>
+                  <div class="form-row part-cardnum"><label for="">卡號</label><input id="card-num" type="text" class="w-100"
+                      placeholder="1111 2222 3333 4444"></div>
+                  <div class="form-row part-cardexp"><label for="">有效期限</label><input id="card-date" type="text" class="w-75"
+                      placeholder="MM/YY"></div>
+                  <div class="form-row part-cvc"><label for="">CVC / CCV</label><input id="card-csv" type="text" class="w-75"
+                      placeholder="123"></input>
+                  </div>
+                </div>
+              </div>  
+          </form>   
+        </div>    
       </div> 
-    <div>
-  </header>
+    <div>  
+    <!--form-ends-->
+
+    <!--next/prev button-->
+    <div id="btn-control" class="control-panel d-flex">
+      <button class="btn btn-outline disabled">上一步</button>
+      <button class="btn btn-primary">下一步</button>
+    </div> 
+
+    <!--checkout section-->
+    <div class="checkout-panel" id="checkout-panel">
+      <div class="container checkout-container">
+        <!--checkout product-panel-->
+        <div class="checkout-product">
+          <h4 class="checkout-title mb-7">購物籃</h4>
+
+          <div class="product d-flex justify-content-between">
+            <!--checkout product01-->
+            <div class="product-img-wrapper">
+              <img src="https://i.ibb.co/3msPSqX/product-01.jpg">
+            </div>
+            <div class="product-info-wrapper d-flex flex-column justify-content-even align-items-end">
+              <p class="product-description">破壞補丁修身牛仔褲</p>
+              <div class="product-quantity">
+                <span class="product-quantity-minus cursor-pointer">-</span>
+                <span class="product-quantity-num">1</span>
+                <span class="product-quantity-plus cursor-pointer">+</span>
+              </div>
+              <p class="product-price-1">$3,999</p>
+            </div>
+            </div>
+            <!--checkout product02-->
+              <div class="product-img-wrapper">
+                <img src="https://i.ibb.co/Tg1JpJz/product-02.jpg">
+              </div>
+              <div class="product-info-wrapper d-flex flex-column justify-content-even align-items-end">
+                <p class="product-description">刷色直筒牛仔褲</p>
+                <div class="product-quantity">
+                  <span class="product-quantity-minus cursor-pointer">-</span>
+                  <span class="product-quantity-num">1</span>
+                  <span class="product-quantity-plus cursor-pointer">+</span>
+                </div>
+                <p class="product-price-2">$1,299</p>
+              </div>
+          </div>
+          <!--checkout sumup-->
+          <div class="delivery-wrapper d-flex justify-content-between">
+            <p class="delivery-title">運費</p>
+            <p class="delivery-fee">免費</p>
+          </div>
+          <div class="total-wrapper d-flex justify-content-between">
+            <p class="total-title">小計</p>
+            <p class="total-price">$5,298</p>
+          </div>
+          </div>
+    </div>    
+    </main>
+
+    <!--footer-->
+    <footer>
+      <div class="footer-container">
+        <div class="footer-logo d-flex align-items-center">
+          <a href="#"><img class="footer-logo-img" src="https://i.ibb.co/7g6MfW0/logo.png" alt=""></a>
+        </div>
+        <!--footer section 01-->
+        <div class="footer-section">
+          <h1 class="footer-title">客戶服務</h1>
+          <ul class="footer-list">
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">運送說明</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">退換貨資訊</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">付款資訊</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">FAQ</a>
+            </li>
+          </ul>
+        </div>
+        <!--footer section 02-->
+        <div class="footer-section">
+          <h1 class="footer-title">關於我們</h1>
+          <ul class="footer-list">
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">品牌故事</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">媒體聯繫</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">Press kit</a>
+            </li>
+          </ul>
+        </div>
+        <!--footer section 03-->
+        <div class="footer-section">
+          <h1 class="footer-title">資訊</h1>
+          <ul class="footer-list">
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">隱私權政策</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">Cookie</a>
+            </li>
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">GDPR</a>
+            </li>
+          </ul>
+        </div>
+        <!--footer section 04-->
+        <div class="footer-cate">
+          <h1 class="footer-title">追蹤 ALPHA Shop</h1>
+          <ul class="footer-list">
+            <li class="footer-list-item">
+              <a href="#" class="footer-list-link">+886 02123-45678</a>
+            </li>
+            <li class="footer-list-social-icons d-flex justify-content-between mt-2">
+              <a href="#" class="footer-list-link">
+                <img src="https://i.ibb.co/PsymSQp/icon-fb.png" class="social-icon">
+              </a>
+              <a href="#" class="footer-list-link">
+                <img src="https://i.ibb.co/bXt92m6/icon-ig.png" class="social-icon">
+              </a>
+              <a href="#" class="footer-list-link">
+                <img src="https://i.ibb.co/FshrbND/icon-whatsapp.png" class="social-icon">
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div> 
+    </footer>  
+</body> 
+
+</html>
+
+
+
+
