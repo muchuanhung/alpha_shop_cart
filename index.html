@@ -13,15 +13,17 @@
 </head>
 
 <body class ="theme">
-  <div class="main>"
+  <div class="main">
   <!-- header -->
-      <a href="#" class="brand">
-        <img src="https://i.ibb.co/7g6MfW0/logo.png" alt="Logo" class="logo">
-      </a>
   <header>
-      
-      <input type="checkbox" class="navbar-toggle" id="navbar-toggle">
-      <nav class="nav-item">
+      <a href="#" class="brand">
+        <img src="./src/image/logo.png" alt="Logo" class="logo">
+      </a>  
+    <!-- nav-toggle -->
+    <!--加入下方這行input 漢堡選單-->
+    <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
+      <nav class="nav">
+            <!-- nav-item-list -->
             <ul class="nav-list">
               <li class="nav-item"><a href="" class="nav-link">男款</a></li>
               <li class="nav-item"><a href="" class="nav-link">女款</a></li>
@@ -29,28 +31,29 @@
               <li class="nav-item"><a href="" class="nav-link">客製商品</a></li>
               <li class="nav-item"><a href="" class="nav-link">聯絡我們</a></li>
             </ul>
+            <!-- search-box -->
+            <div class="nav-list-btn"></ul>
+              <li class="nav-btn"><a href="" class="nav-link"><img src="./src/image/icon_search.png"></i></a></li>
+              <li class="nav-btn"><a href="" class="nav-link"><img src="./src/image/icon_cart.png"></i></a></li>
+              <li class="nav-btn"><a href="" class="nav-link"><img src="./src/image/icon_mode_light.png"></i></a></li>
+            </div>
       </nav>
+     <!-- 漢堡排 -->
           <label for="navbar-toggle" class="navbar-toggle-label">
-            <img src="https://i.ibb.co/tpMhmbm/icon-menu.png" alt="hamburger">
+            <img src="./src/image/icon_menu.png" alt="hamburger">
           </label>
-
-   <!-- search-box -->
-      <nav class="nav-function">
-          <ul class="nav-list-btn"></ul>
-            <li class="nav-btn"><a href="" class="nav-link"><img src="https://i.ibb.co/9cgXgGP/icon-search.png"></i></a></li>
-            <li class="nav-btn"><a href="" class="nav-link"><img src="https://i.ibb.co/JQTxGmS/icon-mode-light.png"></i></a></li>
-            <li class="nav-btn"><a href="" class="nav-link"><img src="https://i.ibb.co/JQTxGmS/icon-mode-light.png"></i></a></li>
-          </ul>
-      </nav>  
   </header>
   <!--header end-->
+
+  <!-- title -->
+    <div class="title">
+      <h2>結帳</h2>
+    </div>
+  <!-- title ends -->
 
    <!-- main container -->
   <main id="main-content">
   <div class="container">
-    <div class="title">
-      <h2>結帳</h2>
-    </div>
     <!--stepper-->
       <div calss="step-form">
           <div class="steps-form-stepper-panel" id="step-control">
@@ -168,7 +171,7 @@
           <div class="product d-flex justify-content-between">
             <!--checkout product01-->
             <div class="product-img-wrapper">
-              <img src="https://i.ibb.co/3msPSqX/product-01.jpg">
+              <img src="./src/image/product_01.jpg">
             </div>
             <div class="product-info-wrapper d-flex flex-column justify-content-even align-items-end">
               <p class="product-description">破壞補丁修身牛仔褲</p>
@@ -182,7 +185,7 @@
             </div>
             <!--checkout product02-->
               <div class="product-img-wrapper">
-                <img src="https://i.ibb.co/Tg1JpJz/product-02.jpg">
+                <img src="./src/image/product_02.jpg">
               </div>
               <div class="product-info-wrapper d-flex flex-column justify-content-even align-items-end">
                 <p class="product-description">刷色直筒牛仔褲</p>
@@ -211,7 +214,7 @@
     <footer>
       <div class="footer-container">
         <div class="footer-logo d-flex align-items-center">
-          <a href="#"><img class="footer-logo-img" src="https://i.ibb.co/7g6MfW0/logo.png" alt=""></a>
+          <a href="#"><img class="footer-logo-img" src="./src/image/logo.png" alt=""></a>
         </div>
         <!--footer section 01-->
         <div class="footer-section">
@@ -270,13 +273,13 @@
             </li>
             <li class="footer-list-social-icons d-flex justify-content-between mt-2">
               <a href="#" class="footer-list-link">
-                <img src="https://i.ibb.co/PsymSQp/icon-fb.png" class="social-icon">
+                <img src="./src/image/icon_fb.png" class="social-icon">
               </a>
               <a href="#" class="footer-list-link">
-                <img src="https://i.ibb.co/bXt92m6/icon-ig.png" class="social-icon">
+                <img src="./src/image/icon_ig.png" class="social-icon">
               </a>
               <a href="#" class="footer-list-link">
-                <img src="https://i.ibb.co/FshrbND/icon-whatsapp.png" class="social-icon">
+                <img src="./src/image/icon_whatsapp.png" class="social-icon">
               </a>
             </li>
           </ul>
@@ -284,7 +287,7 @@
       </div> 
     </footer>  
 </body> 
-
+<script src="src/js/main.js" charset="utf-8"></script>
 </html>
 
 

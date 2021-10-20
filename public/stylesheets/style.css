@@ -1,8 +1,26 @@
 /* --- reset CSS --- */
-* {
+/* ----- Overall settings ----- */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+}
+
+html,
+body {
+  width: 100vw;
+  height: 100vh;
+}
+
+body {
+  font-family: "M PLUS Rounded 1c", sans-serif;
+  font-size: 1rem;
+  color: #333333;
+  vertical-align: baseline;
 }
 
 ul,
@@ -10,59 +28,126 @@ li {
   list-style: none;
 }
 
-a,
-a:visited {
+a {
   text-decoration: none;
   color: inherit;
 }
 
-/* --- CSS Start --- */
-body {
-  width: 100vw;
-  height: 100vh;
-  font-family: "Noto Sans TC", sans-serif;
-  font-size: 14px;
+a:visited,
+a:hover,
+a:active {
+  color: inherit;
 }
 
-header {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: 1.5rem;
+  color: #222222;
+}
+
+h1 {
+  text-transform: uppercase;
+}
+
+input,
+button {
+  font-family: inherit;
+  color: inherit;
+  font-size: inherit;
+}
+
+.container {
   width: 100%;
-  min-height: 70px;
-  padding: 10px 20px;
+}
+
+/* ------ header settings ----- */
+@media screen and (min-width: 375px) {
+  header {
+    position: sticky;
+    z-index: 1;
+    width: 100%;
+    height: 60px;
+    box-shadow: 0px 2px 10px 0px rgba(40, 40, 40, 0.1);
+  }
+
+  .brand {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0 auto;
+    margin-top: 16px;
+    width: 136px;
+    height: 48px;
+  }
+}
+
+/* ------ nav-toggle settings ----- */
+nav {
+  position: absolute;
+  top: 100%; /*置於父元素下方*/
+  width: 100%;
+  border: 1px solid gray; /*test*/
+  transform: scale(1, 0);
+  transform-origin: top;
+  transition: transform 0.3s ease-out;
+}
+
+.navbar-toggle {
+  position: absolute;
+  visibility: hidden;
+}
+
+.navbar-toggle:checked ~ .nav {
+  transform: scale(1, 1);
+}
+
+.navbar-toggle-label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 7.5%;
   display: flex;
-  justify-content: space-between;
   align-items: center;
 }
 
-nav ul {
+.navbar-toggle:checked ~ .nav .nav-item {
+  /*只有開啟時 delay .15s */
+  transition: opacity 0.2s ease-out 0.15s;
+  /*開啟時透明度為1*/
+  opacity: 1;
+}
+
+.nav-item {
+  margin: 1.4rem 0;
   display: flex;
-  gap: 15px;
+  justify-content: center;
+  align-items: center;
+}
+.nav-list-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
-.action {
-  height: 150px;
-  padding: 8px 15px;
-  border-radius: 5px;
-  background-color: #ddd;
-  font-weight: 600;
+.title {
+  position: absolute;
+  margin-top: 16px;
 }
 
-.action:hover {
-  background-color: #bbb;
+.main-content {
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 2fr 1fr;
+  grid-template-columns: 2fr 1fr;
+  grid-template-areas: "left-content checkout-panel" "control-panel checkout-panel";
+  margin-top: -30px;
 }
 
-.action:active {
-  background-color: #888;
-  color: #fcfcfc;
-}
-
-.home > .action {
-  padding: 8px 20px;
-  font-size: 20px;
-  letter-spacing: 1.3px;
-}
-
-main {
-  padding: 50px;
-  font-size: 2rem;
-  color: rgb(41, 41, 41);
+footer {
+  display: none;
 }
