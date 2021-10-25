@@ -1,5 +1,6 @@
 @import "reset";
-@import "container";
+/* ----- Overall settings ----- */
+@import url("https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@400;500;700;800;900&display=swap");
 
 /* ------ scss setting ----- */
 @mixin getStepNums($num) {
@@ -7,116 +8,6 @@
     &:nth-child(#{$i}) .circle-container::after {
       content: "#{$i}";
     }
-  }
-}
-
-/* ------- color setting ------- */
-$standard-font-family: "Noto Sans TC", sans-serif;
-$brand-font-family: "Lato", "Noto Sans TC", sans-serif;
-$standard-font-size: 16px;
-$white: #ffffff;
-$rose-pink: #f67599;
-$shadow-gray: #f9f9f9;
-// gray for border and horizontal line:
-$light-gray: #f0f0f5;
-// gray for inactive info:
-$neutrals-gray: #afb1bd;
-// gray for checked steps:
-$dark-gray: #333333;
-$phone-width: 375px;
-$pad-width: 540px;
-$pc-width: 900px;
-$max-width: 1056px;
-
-:root {
-  --bg-color: #{$white};
-  --body-color: #2a2a2a;
-  --form-description-color: #808080;
-  --placeholder-color: #999999;
-  --shopping-cart-bg: #{$white};
-  --border-light-color: #{$light-gray};
-  --footer-bg: #f6f7f8;
-  --footer-color: #808080;
-  --footer-color-title: #2a2a2a;
-}
-
-[dark-theme="dark"] {
-  --bg-color: #121212;
-  --body-color: #{$white};
-  --form-description-color: #{$light-gray};
-  --placeholder-color: #{$neutrals-gray};
-  --shopping-cart-bg: #{$dark-gray};
-  --border-light-color: #444444;
-  --footer-bg: #{$dark-gray};
-  --footer-color: #{$light-gray};
-  --footer-color-title: #{$white};
-}
-
-/* ------- project setting ------- */
-body {
-  font-family: $standard-font-family;
-  font-size: $standard-font-size;
-  background-color: var(--footer-bg);
-  color: var(--body-color);
-}
-
-main {
-  min-height: 70vh;
-  background-color: var(--bg-color);
-}
-
-form {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 14px;
-}
-
-input,
-select {
-  height: 40px;
-  padding: 12px 1rem;
-  font-size: 12px;
-  border-radius: 4px;
-  border: 1px solid var(--placeholder-color);
-  background-color: var(--bg-color);
-  color: var(--body-color);
-}
-
-input {
-  &::placeholder {
-    color: var(--placeholder-color);
-  }
-}
-
-.select-wrapper {
-  position: relative;
-  height: 40px;
-  z-index: 0;
-
-  &::after {
-    content: "";
-    position: absolute;
-    margin: 0 -10px;
-    right: 16px;
-    bottom: 16px;
-    z-index: -1;
-    /* create drop-down triangle */
-    border-style: solid;
-    border-width: 5px 5px 0 5px;
-    border-color: var(--body-color) transparent transparent transparent;
-  }
-}
-
-select {
-  /*拿掉預設樣式*/
-  -webkit-appearance: none;
-  width: 100%;
-  height: 100%;
-  background-color: transparent;
-  color: var(--placeholder-color);
-  cursor: pointer;
-  &:valid {
-    color: var(--body-color);
   }
 }
 
@@ -183,24 +74,24 @@ nav {
   justify-content: center;
   align-items: center;
 }
-
-.nav-item::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 14.5px;
-  right: 14.5px;
-  height: 2px;
-  background-color: $light-gray;
+.nav-list-btn {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
 }
 
 /* ------ stepper setting ----- */
+.stepper-panel {
+  width: 100%;
+  height: 100%;
+  border: 1px solid rgb(26, 156, 196); /*暫時加上邊框，以利於辨識位置*/
+}
 
 .title {
   width: 100%;
   align-items: center;
   padding-left: 7.5%;
-  font-size: 24px;
 }
 
 .stepper-container {
@@ -220,7 +111,7 @@ nav {
   @include getStepNums(3);
 }
 
-.step-active .circle-container {
+.active .circle-container {
   background-color: pink;
   color: white;
 }
@@ -257,30 +148,30 @@ nav {
   height: 1px;
   background-color: lightgray;
 }
+
 /* ------ form setting ----- */
 .form-panel {
   width: 100%;
   height: 100%;
-  margin-top: 12px;
+  border: 1px solid rgb(196, 26, 188); /*暫時加上邊框，以利於辨識位置*/
+  margin-top: 24px;
   margin-bottom: 24px;
-}
-
-.form-title {
-  font-size: 24px;
 }
 
 .form-container {
   height: 100%;
   margin: 0 auto;
   padding: 0 7.5%;
-  margin-bottom: px;
   align-items: center;
+  border: 1px solid grey; /*暫時加上邊框，以利於辨識位置*/
 }
 
 .form-row {
-  margin-top: 12px;
-  font-size: 16px;
-  color: var(--form-description-color);
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 24px;
+  color: gray;
+  border: 1px solid rgb(253, 0, 0); /*暫時加上邊框，以利於辨識位置*/
   /*轉換label inline元素*/
   > label {
     display: block;
@@ -288,7 +179,9 @@ nav {
 }
 
 .form-row-item {
-  gap: 12px;
+  display: flex;
+  flex-direction: column;
+  padding-right: 3rem;
 }
 
 /* ------ chart setting ----- */
@@ -324,7 +217,7 @@ nav {
   padding: 5px;
 }
 
-.bt-control-panel {
+.control-panel {
   margin-top: 24px;
   display: flex;
   justify-content: space-between;
