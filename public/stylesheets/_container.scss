@@ -1,0 +1,84 @@
+/* ------- container CSS ------- */
+.d-none {
+  display: none;
+}
+
+.d-inline {
+  display: inline;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+.d-block {
+  display: block;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.flex-wrap {
+  flex-wrap: wrap;
+}
+
+.justify-content-start {
+  justify-content: flex-start;
+}
+
+.justify-content-end {
+  justify-content: flex-end;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.align-items-start {
+  align-items: flex-start;
+}
+
+.align-items-end {
+  align-items: flex-end;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+@each $num in (1, 2, 3) {
+  .flex-grow-#{$num} {
+    flex-grow: $num;
+  }
+}
+
+.flex-basis-100 {
+  flex-basis: 100%;
+}
+
+// create shorthand spacing classes
+$spacer: 1rem;
+$multiple: (1, 2, 3, 4, 5);
+/* shorthand border-radius classes */
+@each $num in (1, 2) {
+  .rounded-#{$num} {
+    border-radius: $num * 0.25 * $spacer;
+  }
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}

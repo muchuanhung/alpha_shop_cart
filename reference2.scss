@@ -592,6 +592,7 @@ form {
       color: var(--body-color);
     }
   }
+  /*待處理*/
   input[type="radio"]:checked ~ .shipping-option {
     &::after {
       content: "";
@@ -607,6 +608,8 @@ form {
       box-shadow: inset 0 0 0 6px var(--body-color);
     }
   }
+  /*待處理*/
+
   @include pc-media {
     max-width: 50%;
     min-height: 35vh;

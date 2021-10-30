@@ -1,0 +1,58 @@
+/* ------- reset CSS ------- */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100%;
+  width: 100%;
+}
+
+ul,
+ol,
+li {
+  list-style: none;
+}
+
+a,
+a:hover,
+a:active,
+a:visited,
+a:focus {
+  text-decoration: none;
+  color: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+button,
+button:hover,
+button:active,
+button:focus {
+  border: 0;
+  background-color: transparent;
+  outline: none;
+  -webkit-appearance: none;
+  cursor: pointer;
+}
+
+button[disabled] {
+  pointer-events: none;
+}
+
+input:required,
+input:invalid {
+  box-shadow: none;
+}
+
+input:focus,
+textarea:focus,
+select,
+select:focus,
+a:focus {
+  outline: none;
+}

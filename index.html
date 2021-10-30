@@ -12,16 +12,17 @@
   <title>Alpha_shop_cart</title>
 </head>
 
-<body class ="theme">
-  <div class="main">
+<body>
   <!-- header -->
   <header>
-      <a href="#" class="brand">
-        <img src="./src/image/logo.png" alt="Logo" class="logo">
-      </a>  
-    <!-- nav-toggle -->
+    <div class="header-bar d-flex flex-column">
+      <!-- 漢堡排 -->
+      <label for="navbar-toggle" class="navbar-toggle-label d-flex align-items-center">
+        <img src="./src/image/icon_menu.png" alt="hamburger">
+      </label>
+        
     <!--加入下方這行input 漢堡選單-->
-    <input type="checkbox" class="navbar-toggle" id="navbar-toggle" />
+    <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="d-none"  />
       <nav class="nav">
             <!-- nav-item-list -->
             <ul class="nav-list">
@@ -32,16 +33,19 @@
               <li class="nav-item"><a href="" class="nav-link">聯絡我們</a></li>
             </ul>
             <!-- search-box -->
-            <div class="nav-list-btn"></ul>
-              <li class="nav-btn"><a href="" class="nav-link"><img src="./src/image/icon_search.png"></i></a></li>
-              <li class="nav-btn"><a href="" class="nav-link"><img src="./src/image/icon_cart.png"></i></a></li>
-              <li class="nav-btn"><a href="" class="nav-link"><img src="./src/image/icon_mode_light.png"></i></a></li>
+            <div class="nav-list-btn d-flex justify-content-center">
+              <li class="nav-btn"><a href="" class="nav-link d-flex align-items-center"><img src="./src/image/icon_search.png"></i></a></li>
+              <li class="nav-btn"><a href="" class="nav-link d-flex align-items-center"><img src="./src/image/icon_cart.png"></i></a></li>
+              <li class="nav-btn"><a href="" class="nav-link d-flex align-items-center"><img src="./src/image/icon_mode_light.png"></i></a></li>
             </div>
       </nav>
-     <!-- 漢堡排 -->
-          <label for="navbar-toggle" class="navbar-toggle-label">
-            <img src="./src/image/icon_menu.png" alt="hamburger">
-          </label>
+    </div>
+      <!-- logo -->
+      <a href="#" class="brand d-flex align-items-center">
+      <img src="./src/image/logo.png" alt="Logo" class="logo">
+      </a>
+      <!-- nav-toggle -->
+     
   </header>
   <!--header end-->
 
@@ -72,7 +76,6 @@
 
     <!--form-->
     <div class="form-panel">
-      <div class="form-container">
 
             <!--form - delivery info 階段1-->
             <div class="part-container">
@@ -126,11 +129,11 @@
 
 
             <!--form - shipping address 階段2-->
-            <div class="part-container d-none form-part-shipping">
+            <div class="part-container d-none">
               <h4 class="form-title">運送方式</h4>
               <!--shipping method01-->
               <div class="form-row">
-                <input type="radio" name="shipping-method" value="standard" id="standard" class="shipping-method-radio" checked>
+                <input type="radio" name="shipping-method" value="standard" id="standard" class="d-none" checked>
                 <label for="standard" class="shipping-option d-flex justify-content-between align-items-center rounded-1">
                   <div class="radio-circle"></div>
                   <div class="shipping-desc d-flex flex-column flex-grow-1">
@@ -145,7 +148,7 @@
               </div>
               <!--shipping method02-->
               <div class="form-row">
-                <input type="radio" name="shipping-method" value="dhl" id="dhl" class="shipping-method-radio">
+                <input type="radio" name="shipping-method" value="dhl" id="dhl" class="d-none">
                 <label for="dhl" class="shipping-option d-flex justify-content-between align-items-center rounded-1">
                   <div class="radio-circle"></div>
                   <div class="shipping-desc d-flex flex-column flex-grow-1">
@@ -185,13 +188,11 @@
                       <input id="card-csv" type="text" placeholder="123">
                     </div>
                   </div>
-              </div>
-
-      </div>        
+              </div>       
     </div>        
     <!--form-ends-->
 
-    <!--checkout section-->
+    <!--checkout section--> 
     <div class="checkout-panel" id="checkout-panel">
       <div class="container checkout-container">
         <!--checkout product-panel-->
@@ -229,14 +230,17 @@
             <!--checkout product03-->
             <div class ="cart-price">
               <div class="delivery-wrapper">
-                <span class="delivery-title">運費</span>
+                <span>運費</span>
+                <span class="price-wrapper">
+                <span>$</span>
                 <span class="delivery-fee">免費</span>
+                </span>
               </div>
               <div class="total-wrapper">
-                <span class="total-title">小計</span>
+                <span>小計</span>
                 <div class="price-wrapper">
                 <span>$</span>
-                <span class="total-price">$5,298</span>
+                <span class="total-amount">0</span>
               </div>
             </div> 
           </div>  
@@ -246,22 +250,22 @@
 
     <!--next/prev button-->
     <div class="btn-control-panel d-flex justify-content-between">
-      <div class="btn-wrapper">
-        <button class="btn-previous">上一步</button>
+      <div class="btn-wrapper flex-grow-1 w-0">
+        <button class="btn btn-previous d-none"><span class="arrow">&#8592;</span> 上一步</button>
       </div>
-      <button class="btn-next">下一步</button>
-      <button type="submit" class="btn btn-sumbit">確認下單</button>
+      <button class="btn btn-next rounded-2 flex-grow-1">下一步 <span class="arrow">&#8594;</span></button>
+      <button type="submit" class="btn btn-submit rounded-2 flex-grow-1 d-none">確認下單</button>
     </div>
-  </form>
-</main>
+    </form>
+    </main>
 
   <!--footer-->
   <footer>
-    <div class="footer-container">
-      <div class="footer-brand">
-        <a href="#" class="footer-logo-img">
+    <div class="footer-container d-flex justify-content-between">
+      <div class="footer-brand d-flex align-items-center">
+        <a href="#" class="footer-logo-img d-flex align-items-center">
           <img src="./src/image/logo.png" alt="Alpha Camp Logo">
-          <h1 class="shop-name">Alpha Shop</h1>
+          <h1 class="shop-name d-inline-block">Alpha Shop</h1>
         </a>
       </div>
   
@@ -307,9 +311,9 @@
       </div>
     </div>
   </footer>
-  
+   
   <script src="main.js"></script>
-  </body>
+</body>
   
-  </html>
+</html>
     

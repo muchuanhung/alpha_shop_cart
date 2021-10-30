@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* ------- reset CSS ------- */
 *,
 *::before,
@@ -936,6 +937,8 @@ form select:valid {
 /* --- Form-group --- */
 .form-group {
   margin-bottom: 24px;
+  /*待處理*/
+  /*待處理*/
 }
 
 .form-group .form-title {
