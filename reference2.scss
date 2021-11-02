@@ -381,7 +381,7 @@ nav {
       height: 100%;
     }
     &:hover {
-      color: $rose-pink;
+      color: $light-gray;
     }
     &:active {
       background-color: $shadow-gray;
@@ -706,7 +706,6 @@ form {
 
 /* --- Footer --- */
 footer {
-  display: none;
   background-color: var(--footer-bg);
   padding: 64px 0 80px;
   color: var(--footer-color);

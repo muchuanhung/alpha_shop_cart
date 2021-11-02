@@ -15,37 +15,39 @@
 <body>
   <!-- header -->
   <header>
-    <div class="header-bar d-flex flex-column">
+    <div class="header-bar">
+      <!--加入下方這行input 漢堡選單-->
+      <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="d-none" />
       <!-- 漢堡排 -->
       <label for="navbar-toggle" class="navbar-toggle-label d-flex align-items-center">
-        <img src="./src/image/icon_menu.png" alt="hamburger">
+        <img src="./src/image/icon_menu.png" alt="hamburger"></i>
       </label>
-        
-    <!--加入下方這行input 漢堡選單-->
-    <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="d-none"  />
       <nav class="nav">
-            <!-- nav-item-list -->
-            <ul class="nav-list">
-              <li class="nav-item"><a href="" class="nav-link">男款</a></li>
-              <li class="nav-item"><a href="" class="nav-link">女款</a></li>
-              <li class="nav-item"><a href="" class="nav-link">最新消息</a></li>
-              <li class="nav-item"><a href="" class="nav-link">客製商品</a></li>
-              <li class="nav-item"><a href="" class="nav-link">聯絡我們</a></li>
-            </ul>
-            <!-- search-box -->
-            <div class="nav-list-btn d-flex justify-content-center">
-              <li class="nav-btn"><a href="" class="nav-link d-flex align-items-center"><img src="./src/image/icon_search.png"></i></a></li>
-              <li class="nav-btn"><a href="" class="nav-link d-flex align-items-center"><img src="./src/image/icon_cart.png"></i></a></li>
-              <li class="nav-btn"><a href="" class="nav-link d-flex align-items-center"><img src="./src/image/icon_mode_light.png"></i></a></li>
-            </div>
+        <!-- nav-item-list -->
+        <ul class="nav-list">
+          <li class="nav-item"><a href="" class="nav-link">男款</a></li>
+          <li class="nav-item"><a href="" class="nav-link">女款</a></li>
+          <li class="nav-item"><a href="" class="nav-link">最新消息</a></li>
+          <li class="nav-item"><a href="" class="nav-link">客製商品</a></li>
+          <li class="nav-item"><a href="" class="nav-link">聯絡我們</a></li>
+        </ul>
+      <!-- search-box -->
+      <div class="nav-list-btn">
+        <a href="" class="icon-link d-flex align-items-center"><img src="./src/image/icon_search.png"></i></a>
+        <a href="" class="icon-link d-flex align-items-center"><img src="./src/image/icon_cart.png"></i></a>
+        <label for="dark-mode-toggle" class="icon-link d-flex align-items-center">
+          <img class="light-theme" src="./src/image/icon_mode_light.png"></i>
+          <img class="dark-theme d-none " src="./src/image/icon_mode_dark.png"></i>
+        </label>
+        <input type="checkbox" name="dark-mode-toggle" id="dark-mode-toggle" class="d-none">
+        <!-- use JS to control the toggle of d-flex / d-none -->
+      </div>
       </nav>
     </div>
       <!-- logo -->
       <a href="#" class="brand d-flex align-items-center">
       <img src="./src/image/logo.png" alt="Logo" class="logo">
-      </a>
-      <!-- nav-toggle -->
-     
+      </a> 
   </header>
   <!--header end-->
 
@@ -55,19 +57,19 @@
   <form action="">
     <!--stepper-->
     <div class="stepper-panel" id="step-control">
-      <h4 class="title">結帳</h4>
-      <div class="stepper-container">
+      <h4 class="form-title">結帳</h4>
+      <div class="stepper-container d-flex justify-content-between">
         <div class="step active">
-          <div class="circle-container"></div>
-          <div class="label-container">寄送地址</div>
+          <div class="circle-container d-flex justify-content-center align-items-center"></div>
+          <div class="label-container ">寄送地址</div>
         </div>
         <div class="step">
-          <div class="circle-container"></div>
+          <div class="circle-container d-flex justify-content-center align-items-center"></div>
           <span class="connect-line"></span>
           <div class="label-container">運送方式</div>
         </div>
         <div class="step">
-          <div class="circle-container"></div>
+          <div class="circle-container d-flex justify-content-center align-items-center"></div>
           <span class="connect-line"></span>
           <div class="label-container">付款資訊</div>
         </div>
@@ -92,7 +94,7 @@
                       </select>
                     </div>
                 </div>
-                <div class="form-row-item d-flex flex-column  flex-grow-2">
+                <div class="form-row-item d-flex flex-column flex-grow-2">
                   <label for="name">姓名</label>
                     <input id="name" type="text" placeholder="請輸入姓名">
                 </div>
@@ -129,7 +131,7 @@
 
 
             <!--form - shipping address 階段2-->
-            <div class="part-container d-none">
+            <div class="part-container d-none form-part-shipping">
               <h4 class="form-title">運送方式</h4>
               <!--shipping method01-->
               <div class="form-row">
@@ -193,8 +195,8 @@
     <!--form-ends-->
 
     <!--checkout section--> 
-    <div class="checkout-panel" id="checkout-panel">
-      <div class="container checkout-container">
+    <div class="checkout-panel rounded-2" id="checkout-panel">
+      <div class="checkout-container d-flex flex-column rounded-2">
         <!--checkout product-panel-->
         <div class="checkout-product">
             <!--checkout product01-->
@@ -263,9 +265,8 @@
   <footer>
     <div class="footer-container d-flex justify-content-between">
       <div class="footer-brand d-flex align-items-center">
-        <a href="#" class="footer-logo-img d-flex align-items-center">
+        <a href="#" class="logo d-flex align-items-center">
           <img src="./src/image/logo.png" alt="Alpha Camp Logo">
-          <h1 class="shop-name d-inline-block">Alpha Shop</h1>
         </a>
       </div>
   
@@ -302,7 +303,7 @@
         <h2 class="footer-title">追蹤 ALPHA Shop</h2>
         <ul class="footer-list">
           <li class="footer-item"><a href="#" class="footer-link">+886 02123-45678</a></li>
-          <li class="footer-item">
+          <li class="footer-item d-flex ">
             <a href="#" class="footer-link"><img src="./src/image/icon_fb.png" class="social-icon"></a>
             <a href="#" class="footer-link"><img src="./src/image/icon_ig.png" class="social-icon"></a>
             <a href="#" class="footer-link"><img src="./src/image/icon_whatsapp.png" class="social-icon"></a>

@@ -723,7 +723,7 @@ nav .nav-item .nav-link {
 }
 
 nav .nav-item:hover {
-  color: #f67599;
+  color: #f0f0f5;
 }
 
 nav .nav-item:active {
@@ -1131,7 +1131,6 @@ form select:valid {
 
 /* --- Footer --- */
 footer {
-  display: none;
   background-color: var(--footer-bg);
   padding: 64px 0 80px;
   color: var(--footer-color);

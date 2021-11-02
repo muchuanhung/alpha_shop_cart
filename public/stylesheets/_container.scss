@@ -72,6 +72,7 @@
 // create shorthand spacing classes
 $spacer: 1rem;
 $multiple: (1, 2, 3, 4, 5);
+
 /* shorthand border-radius classes */
 @each $num in (1, 2) {
   .rounded-#{$num} {

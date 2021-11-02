@@ -7,9 +7,7 @@ $rose-pink: #f67599;
 $shadow-gray: #f9f9f9;
 // gray for border and horizontal line:
 $light-gray: #f0f0f5;
-// gray for inactive info:
 $neutrals-gray: #afb1bd;
-// gray for checked steps:
 $dark-gray: #333333;
 $phone-width: 375px;
 $mobile-width: 540px;
@@ -29,7 +27,7 @@ $max-width: 1440px;
 }
 
 [dark-theme="dark"] {
-  --bg-color: #121212;
+  --bg-color: #2a2a2a;
   --body-color: $white;
   --form-description-color: $light-gray;
   --placeholder-color: $neutrals-gray;
