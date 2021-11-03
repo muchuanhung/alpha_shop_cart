@@ -706,6 +706,7 @@ form {
 
 /* --- Footer --- */
 footer {
+  display: none;
   background-color: var(--footer-bg);
   padding: 64px 0 80px;
   color: var(--footer-color);

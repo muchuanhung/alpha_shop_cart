@@ -69,9 +69,59 @@
   flex-basis: 100%;
 }
 
+// create shorthand sizing classes
+$sizes: (
+  25: 25%,
+  50: 50%,
+  75: 75%,
+  100: 100%,
+);
+
+/* shorthand sizing classes */
+@each $prop, $abbrev in (width: w, height: h) {
+  @each $num, $percentage in $sizes {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: #{$percentage};
+    }
+  }
+}
+
+%standard-boxshadow {
+  box-shadow: 3px 0 13px 0 rgba(100, 112, 134, 0.1);
+}
+
 // create shorthand spacing classes
 $spacer: 1rem;
 $multiple: (1, 2, 3, 4, 5);
+
+/* shorthand spacing classes */
+@each $prop, $abbrev in (margin: m, padding: p) {
+  @each $num in $multiple {
+    .#{$abbrev}-#{$num} {
+      #{$prop}: $num * 0.5 * $spacer;
+    }
+    .#{$abbrev}t-#{$num} {
+      #{$prop}-top: $num * 0.5 * $spacer;
+    }
+    .#{$abbrev}r-#{$num} {
+      #{$prop}-right: $num * 0.5 * $spacer;
+    }
+    .#{$abbrev}b-#{$num} {
+      #{$prop}-bottom: $num * 0.5 * $spacer;
+    }
+    .#{$abbrev}l-#{$num} {
+      #{$prop}-left: $num * 0.5 * $spacer;
+    }
+    .#{$abbrev}x-#{$num} {
+      #{$prop}-left: $num * 0.5 * $spacer;
+      #{$prop}-right: $num * 0.5 * $spacer;
+    }
+    .#{$abbrev}y-#{$num} {
+      #{$prop}-top: $num * 0.5 * $spacer;
+      #{$prop}-bottom: $num * 0.5 * $spacer;
+    }
+  }
+}
 
 /* shorthand border-radius classes */
 @each $num in (1, 2) {

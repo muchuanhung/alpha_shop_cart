@@ -3,219 +3,142 @@
 @import "color";
 
 /* ------ scss Mixins for RWD setting ----- */
-@mixin mobile-media {
-  @media all and (min-width: $mobile-width) {
+@mixin pad-media {
+  @media all and (min-width: $pad-width) {
     @content;
   }
 }
 
-@mixin desktop-media {
-  @media all and (min-width: $desktop-width) {
+@mixin pc-media {
+  @media all and (min-width: $pc-width) {
     @content;
   }
 }
 
-@mixin getStepNums($num) {
-  @for $i from 1 through $num {
-    &:nth-child(#{$i}) .circle-container::after {
-      content: "#{$i}";
-    }
-  }
-}
-
-/* ------- project setting ------- */
+/* ------- project styles starts here ------- */
 body {
-  font-family: $font-stack;
+  font-family: $standard-font-family;
   font-size: $standard-font-size;
   background-color: var(--footer-bg);
   color: var(--body-color);
 }
 
-main {
-  min-height: 70vh;
-  background-color: var(--bg-color);
-}
-
-form {
-  max-width: $max-width;
-  margin: 0 auto;
-  padding: 14px;
-  .form-title {
-    font-size: 32px;
-  }
-  input,
-  select {
-    height: 40px;
-    padding: 12px 1rem;
-    font-size: 12px;
-    border-radius: 4px;
-    border: 1px solid var(--placeholder-color);
-    background-color: var(--bg-color);
-    color: var(--body-color);
-  }
-
-  input {
-    &::placeholder {
-      color: var(--placeholder-color);
-    }
-  }
-
-  .select-wrapper {
-    position: relative;
-    height: 40px;
-    z-index: 0;
-    &::after {
-      content: "";
-      position: absolute;
-      margin: 0 -10px;
-      right: 16px;
-      bottom: 16px;
-      z-index: -1;
-      /* create drop-down triangle */
-      border-style: solid;
-      border-width: 5px 5px 0 5px;
-      border-color: var(--body-color) transparent transparent transparent;
-    }
-  }
-  select {
-    /*拿掉預設樣式*/
-    -webkit-appearance: none;
-    width: 100%;
-    height: 100%;
-    background-color: transparent;
-    color: var(--placeholder-color);
-    cursor: pointer;
-    &:valid {
-      color: var(--body-color);
-    }
-    @include desktop-media {
-      position: relative;
-    }
-  }
-}
-
-/* ------ header setting ----- */
-@media screen and (min-width: 375px) {
-  header {
-    position: sticky;
-    z-index: 1;
-    width: 100%;
-    height: 60px;
-    box-shadow: 0px 2px 10px 0px rgba(40, 40, 40, 0.1);
-  }
-}
-
-.header-bar {
-  position: relative;
-  height: 100%;
+/* --- header --- */
+header {
+  height: 56px;
   width: 100%;
-  display: flex;
-  flex-direction: column;
-  max-width: $max-width;
-  margin: 0 auto;
-  /*作為父元素層級*/
-  @include desktop-media {
-    position: relative;
-    flex-direction: row;
-    justify-content: space-between;
-  }
-  /*漢堡排*/
-  .navbar-toggle-label {
-    position: absolute;
-    width: 56px;
-    height: 56px;
-    cursor: pointer;
-    padding-left: 5%;
-    @include desktop-media {
-      display: none;
-    }
-  }
-  .nav-list-btn {
-    height: 70px;
-    z-index: 20;
-    display: flex;
-    justify-content: center;
-    background-color: $shadow-gray;
-    opacity: 1;
-    transform-origin: top;
-    transition: all 0.2s ease-in;
-    @include desktop-media {
-      height: 56px;
-      padding-right: 2rem;
-      font-size: 1rem;
-      opacity: 1;
-      transform: scale(1, 1);
-      box-shadow: unset;
-    }
-  }
-  .icon-link {
-    height: 70px;
-    padding: 2rem;
-    @include desktop-media {
-      height: 56px;
-    }
-    &:hover {
-      color: $rose-pink;
-    }
-    &:active {
-      background-color: $shadow-gray;
-    }
-  }
-}
-.brand {
-  margin: 0 auto;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  right: 50%;
+  position: fixed;
   z-index: 10;
-  transform: translateX(50%);
+  background-color: var(--bg-color);
+  @extend %standard-boxshadow;
+
+  .header-menu {
+    height: 100%;
+    width: 100%;
+    max-width: $max-width;
+    margin: 0 auto;
+    position: relative;
+    @include pc-media {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+    .navbar-toggle-label {
+      width: 56px;
+      height: 56px;
+      font-size: 17px;
+      cursor: pointer;
+      line-height: 56px;
+      text-align: center;
+      @include pc-media {
+        display: none;
+      }
+    }
+    .header-actions {
+      height: 70px;
+      z-index: 20;
+      background-color: var(--bg-color);
+      font-size: 20px;
+      box-shadow: 0 8px 7px 1px rgba(224, 228, 233, 0.2);
+      opacity: 0;
+      transform: scale(1, 0) translateY(-600%);
+      transform-origin: top;
+      transition: all 0.2s ease-in;
+      @include pad-media {
+        height: 56px;
+        font-size: 1rem;
+        opacity: 1;
+        transform: scale(1, 1);
+        position: absolute;
+        right: 0;
+        box-shadow: unset;
+      }
+      .header-link {
+        height: 70px;
+        @include pad-media {
+          height: 56px;
+        }
+        &:hover {
+          color: $rose-pink;
+        }
+        &:active {
+          background-color: $shadow-gray;
+        }
+      }
+    }
+  }
+
+  .brand {
+    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 50%;
+    z-index: 10;
+    transform: translateX(50%);
+  }
 }
 
-/* ------ nav-toggle setting ----- */
 nav {
-  position: absolute;
-  top: 100%; /*置於父元素正下方*/
   width: 100%;
   z-index: 10;
   font-weight: 500;
-  background-color: $shadow-gray;
+  background-color: var(--bg-color);
   box-shadow: 0 8px 7px 1px rgba(224, 228, 233, 0.2);
   opacity: 0;
   transform: scale(1, 0);
   transform-origin: top;
   transition: all 0.2s ease-in;
-  @include desktop-media {
-    height: 56px;
-    display: flex;
-    justify-content: space-between;
+  @include pc-media {
     opacity: 1;
-    top: 0%;
     transform: scale(1, 1);
+    width: 50%;
     background-color: transparent;
     box-shadow: unset;
   }
 
   .nav-list {
-    display: flex;
-    flex-flow: column;
-    @include desktop-media {
+    @include pc-media {
       display: flex;
-      flex-flow: row;
-      margin-left: 0.5rem;
     }
   }
+
   .nav-item {
-    padding: 2rem;
-    position: relative;
+    width: 100vw;
+    padding: 25px;
     text-align: center;
-    @include desktop-media {
+    position: relative;
+    @include pc-media {
       margin-left: 0.5rem;
       width: auto;
       padding: 1rem 1rem 1rem 0;
     }
+    .nav-link {
+      display: inline-block;
+      width: 100%;
+      height: 100%;
+    }
     &:hover {
-      color: $dark-gray;
+      color: $light-gray;
     }
     &:active {
       background-color: $shadow-gray;
@@ -228,7 +151,7 @@ nav {
       right: 14.5px;
       height: 2px;
       background-color: $light-gray;
-      @include desktop-media {
+      @include pc-media {
         all: unset;
       }
     }
@@ -237,11 +160,11 @@ nav {
 
 #navbar-toggle:checked {
   ~ label {
-    color: $dark-gray;
+    color: $rose-pink;
     ~ nav {
       opacity: 1;
       transform: scale(1, 1);
-      ~ .nav-list-btn {
+      ~ .header-actions {
         opacity: 1;
         transform: scale(1, 1) translateY(0);
       }
@@ -249,78 +172,145 @@ nav {
   }
 }
 
-/* ------ stepper setting ----- */
-.stepper-container {
-  width: 100%;
+/* --- Main Starts here --- */
+main {
+  min-height: 70vh;
+  background-color: var(--bg-color);
+  padding-top: 70px;
+}
+
+form {
+  max-width: $max-width;
   margin: 0 auto;
-  position: relative;
-
-  .step {
-    position: relative;
-    flex: 1;
-    text-align: center;
-    @include getStepNums(3);
+  padding: 14px;
+  .form-title {
+    font-size: 32px;
+    font-weight: 700;
   }
-
-  .step-active .circle-container {
-    background-color: pink;
-    color: white;
-  }
-
-  .step .circle-container {
-    background-color: $dark-gray;
-    color: white;
-  }
-
-  /*偽類切換打勾元素*/
-  .checked .circle-container::after {
-    content: "\2714";
-  }
-
-  .circle-container {
-    height: 24px;
-    width: 24px;
-    border-radius: 50%;
-    margin: 0 auto;
-  }
-
-  .label-container {
-    margin-top: 10px;
-    color: gray;
-    @include desktop-media {
-      display: unset;
-    }
-  }
-
-  .step-active {
+  input,
+  select {
+    height: 40px;
+    padding: 12px 1rem;
+    font-size: 12px;
+    border-radius: 4px;
+    border: 1px solid var(--placeholder-color);
+    background-color: var(--bg-color);
     color: var(--body-color);
-    .circle-container {
-      border-color: var(--body-color);
+  }
+  input {
+    &::placeholder {
+      color: var(--placeholder-color);
     }
   }
-
-  .connect-line {
-    position: absolute;
-    top: 12px;
-    left: calc(-50% + 20px);
-    right: calc(50% + 20px);
-    width: 60%;
-    display: block;
-    height: 1px;
-    background-color: lightgray;
+  .select-wrapper {
+    position: relative;
+    z-index: 0;
+    &::after {
+      content: "";
+      position: absolute;
+      right: 16px;
+      bottom: 16px;
+      z-index: -1;
+      /* create drop-down triangle */
+      border-style: solid;
+      border-width: 5px 5px 0 5px;
+      border-color: var(--body-color) transparent transparent transparent;
+    }
   }
-  @include desktop-media {
-    max-width: 50%;
-    margin-left: 10px;
+  select {
+    -webkit-appearance: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    color: var(--placeholder-color);
+    cursor: pointer;
+    &:valid {
+      color: var(--body-color);
+    }
+  }
+  @include pc-media {
+    position: relative;
   }
 }
 
-/* ------ form setting ----- */
-.form-panel {
-  width: 100%;
-  height: 100%;
-  margin-top: 12px;
+/* --- Steps-wrapper --- */
+.steps-wrapper {
+  margin: 24px 0;
+  position: relative;
+  .step {
+    background-color: var(--bg-color);
+    position: relative;
+    z-index: 5;
+    color: $neutrals-gray;
+    .step-circle {
+      position: relative;
+      margin: 0 22px;
+      width: 2rem;
+      height: 2rem;
+      border: 1px solid $neutrals-gray;
+      flex-shrink: 0;
+      @include pc-media {
+        margin: 0 0 0 16px;
+      }
+    }
+    .step-label {
+      margin: 0 16px 0 12.5px;
+      @include pc-media {
+        display: unset;
+      }
+    }
+    &.active {
+      color: var(--body-color);
+      .step-circle {
+        border-color: var(--body-color);
+      }
+    }
+    &.checked {
+      color: var(--body-color);
+      .step-circle::after {
+        content: "\2713";
+        position: absolute;
+        z-index: 6;
+        top: 0;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        border-radius: 50%;
+        border: 1px solid var(--body-color);
+        background-color: $dark-gray;
+        color: $white;
+        text-align: center;
+        font-size: 18px;
+      }
+    }
+  }
+  .step-bar {
+    height: 2px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    z-index: 1;
+    background-color: var(--border-light-color);
+  }
+  .progress-line {
+    height: 2px;
+    width: 0%;
+    position: absolute;
+    top: 50%;
+    z-index: 2;
+    background-color: var(--body-color);
+  }
+  @include pc-media {
+    max-width: 50%;
+  }
+}
+
+/* --- Form-group --- */
+.form-group {
   margin-bottom: 24px;
+  .form-title {
+    font-size: 24px;
+  }
   .form-row {
     display: flex;
     justify-content: space-between;
@@ -329,15 +319,15 @@ nav {
     font-size: 12px;
     color: var(--form-description-color);
   }
-  .form-row-item {
-    gap: 12px;
+  .form-unit {
+    gap: 8px;
     &.flex-grow-1-pc {
-      @include mobile-media {
+      @include pc-media {
         flex: 1 0 auto;
       }
     }
     &.flex-grow-2-pc {
-      @include desktop-media {
+      @include pc-media {
         flex: 2 0 auto;
       }
     }
@@ -355,7 +345,7 @@ nav {
       border-radius: 50%;
       border: 1px solid var(--placeholder-color);
     }
-    .shipping-name {
+    .shipping-subtitle {
       color: var(--body-color);
     }
   }
@@ -374,54 +364,62 @@ nav {
       box-shadow: inset 0 0 0 6px var(--body-color);
     }
   }
-  /*展開電腦版的排版*/
-  @include desktop-media {
+
+  @include pc-media {
     max-width: 50%;
     min-height: 35vh;
   }
 }
 
-/* ------ chart setting ----- */
-.checkout-container {
-  width: 100%;
-  /*form container水平置中效果*/
-  margin: 0 auto;
-  padding: 2.4rem 0.2rem;
-  border: 1px solid rgb(128, 128, 128); /*暫時加上邊框，以利於辨識位置*/
-
-  .product {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 10px;
+/* --- Shopping cart --- */
+.shopping-cart {
+  border: 1px solid var(--border-light-color);
+  background-color: var(--shopping-cart-bg);
+  .shopping-list {
+    gap: 32px;
+    img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+    }
+    .qty-wrapper {
+      font-size: 14px;
+      font-weight: 500;
+      .qty-controller {
+        color: $dark-gray;
+        width: 26px;
+        height: 26px;
+        background-color: $light-gray;
+        text-align: center;
+        line-height: 26px;
+        font-size: 19px;
+        cursor: pointer;
+        &:hover {
+          background-color: $shadow-gray;
+        }
+        &:active {
+          background-color: $light-gray;
+        }
+      }
+    }
   }
-
-  .product-info-wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: flex-end;
+  .price-wrapper {
+    font-weight: 700;
   }
-
-  .delivery-wrapper,
-  .total-wrapper {
-    display: flex;
-    justify-content: space-between;
-    margin: 10px;
-    padding: 5px;
+  .shipping-subtotal,
+  .shopping-price {
+    border-top: 1px solid $light-gray;
   }
-
-  @include desktop-media {
+  @include pc-media {
     position: absolute;
-    max-width: 25%;
-    margin: 0 50px;
-    right: 13%;
-    top: 200px;
+    right: 16px;
+    left: calc($max-width / 12 * 7);
+    top: 90px;
   }
 }
 
 /* --- Buttons --- */
-.btn-control-panel {
+.btn-groups {
   margin: 1rem 0;
   padding: 24px 0;
   font-size: 16px;
@@ -433,6 +431,11 @@ nav {
     color: $white;
     .arrow {
       font-size: 20px;
+    }
+    &:hover {
+      opacity: 0.9;
+      font-weight: 600;
+      @extend %standard-boxshadow;
     }
     &:active {
       opacity: 1;
@@ -451,7 +454,7 @@ nav {
       }
     }
   }
-  @include desktop-media {
+  @include pc-media {
     max-width: 50%;
   }
 }
@@ -466,7 +469,7 @@ footer {
     max-width: $max-width;
     margin: 0 auto;
   }
-  footer-brand {
+  .footer-brand {
     .logo {
       img {
         width: 24px;
@@ -488,11 +491,7 @@ footer {
       color: var(--footer-color-title);
     }
   }
-  .footer-item {
-    justify-content: space-between;
-    padding: 5px;
-  }
-  @include desktop-media {
+  @include pc-media {
     display: block;
   }
 }
