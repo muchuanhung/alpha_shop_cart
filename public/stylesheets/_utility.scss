@@ -1,0 +1,111 @@
+// variant
+$md: 60rem;
+
+:root {
+  --md: "60rem";
+}
+
+$phone: "(max-width: $md)" !default;
+$tablet-landscape: "(min-width: $md)" !default;
+
+$sizes: (
+  1: 8.333333%,
+  2: 16.666667%,
+  3: 25%,
+  4: 33.333333%,
+  5: 41.666667%,
+  6: 50%,
+  7: 58.333333%,
+  8: 66.666667%,
+  9: 75%,
+  10: 83.333333%,
+  11: 91.666667%,
+  12: 100%,
+);
+
+@mixin media($query: $phone) {
+  @media #{$query} {
+    @content;
+  }
+}
+
+//%extend
+
+%rounded {
+  border-radius: 8px;
+}
+
+%rounded-sm {
+  border-radius: 4px;
+}
+
+%input-style {
+  border: 1px solid #4a4a4a;
+  font-family: "Noto Sans TC", "Noto Sans", sans-serif;
+  width: 100%;
+  height: 40px;
+  font-size: 12px;
+  border-radius: 4px;
+  padding: 0 1em;
+}
+
+// all screen size
+
+.flex-1 {
+  flex: 1 1;
+}
+
+@each $prop, $abbrev in (width: w) {
+  @each $num, $val in $sizes {
+    .#{$abbrev}-#{$num}-12 {
+      #{$prop}: $val;
+    }
+  }
+}
+
+.d-none {
+  display: none;
+}
+
+.d-inline-block {
+  display: inline-block;
+}
+
+//md(<54em) only
+
+@media screen and (max-width: $md) {
+  @each $prop, $abbrev in (width: w) {
+    @each $num, $val in $sizes {
+      .md-#{$abbrev}-#{$num}-12 {
+        #{$prop}: $val;
+      }
+    }
+  }
+  .md-d-none {
+    display: none;
+  }
+}
+
+//lg(>54em) only
+
+@media screen and (min-width: $md) {
+  @each $prop, $abbrev in (width: w) {
+    @each $num, $val in $sizes {
+      .lg-#{$abbrev}-#{$num}-12 {
+        #{$prop}: $val;
+      }
+    }
+  }
+  .lg-d-none {
+    display: none;
+  }
+  .lg-flex-1 {
+    flex: 1;
+  }
+  .lg-mr-15 {
+    margin-right: 1rem;
+  }
+  .lg-ml-15 {
+    margin-left: 1rem;
+  }
+}

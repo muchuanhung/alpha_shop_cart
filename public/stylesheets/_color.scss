@@ -1,41 +1,40 @@
-/* ------- color setting ------- */
-$standard-font-family: "Noto Sans TC", sans-serif;
-$brand-font-family: "Lato", "Noto Sans TC", sans-serif;
-$standard-font-size: 16px;
-$white: #ffffff;
-$rose-pink: #f67599;
-$shadow-gray: #f9f9f9;
-// gray for border and horizontal line:
-$light-gray: #f0f0f5;
-// gray for inactive info:
-$neutrals-gray: #afb1bd;
-// gray for checked steps:
-$dark-gray: #333333;
-$phone-width: 375px;
-$pad-width: 540px;
-$pc-width: 900px;
-$max-width: 1056px;
-
-:root {
-  --bg-color: #{$white};
-  --body-color: #2a2a2a;
-  --form-description-color: #808080;
-  --placeholder-color: #999999;
-  --shopping-cart-bg: #{$white};
-  --border-light-color: #{$light-gray};
-  --footer-bg: #f6f7f8;
-  --footer-color: #808080;
-  --footer-color-title: #2a2a2a;
+html {
+  --white: #fff;
+  --black: #000;
+  --pink: #f67599;
+  --gray-900: #000000;
+  --gray-800: #2a2a2a;
+  --gray-700: #808080;
+  --gray-600: #999999;
+  --gray-500: #afb1bd;
+  --gray-400: #e6e6eb;
+  --gray-300: #f0f0f5;
+  --gray-200: #f6f7f8;
+  --logo: var(--gray-700);
+  --text: var(--gray-800);
+  --theme: var(--pink);
+  --theme-text: var(--black);
+  --theme-bg: #fff;
+  --theme-cart-bg: #fff;
+  --theme-cart-border: rgba(255, 255, 255, 20%);
 }
 
-[dark-theme="dark"] {
-  --bg-color: #121212;
-  --body-color: #{$white};
-  --form-description-color: #{$light-gray};
-  --placeholder-color: #{$neutrals-gray};
-  --shopping-cart-bg: #{$dark-gray};
-  --border-light-color: #444444;
-  --footer-bg: #{$dark-gray};
-  --footer-color: #{$light-gray};
-  --footer-color-title: #{$white};
+html[data-theme="dark"] {
+  --white: #000;
+  --black: #fff;
+  --pink: #f67599;
+  --gray-900: #000000;
+  --gray-800: #2a2a2a;
+  --gray-700: #e6e6eb;
+  --gray-600: #999999;
+  --gray-500: #afb1bd;
+  --gray-400: #e6e6eb;
+  --gray-300: #f0f0f5;
+  --gray-200: #333;
+  --logo: var(--black);
+  --icon: var(--gray-200);
+  --text: var(--gray-300);
+  --theme-bg: #383838;
+  --theme-cart-bg: #383838;
+  --theme-cart-border: rgba(255, 255, 255, 20%);
 }

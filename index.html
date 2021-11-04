@@ -7,276 +7,440 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&display=swap" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC&family=Lato:wght@700;900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"
+    integrity="sha384-DyZ88mC6Up2uqS4h/KRgHuoeGwBcD4Ng9SiP4dIRy0EXTlnuz47vAwmeGwVChigm" crossorigin="anonymous">
+  <title>Alpha_Shop</title>
   <link rel="stylesheet" href="public/stylesheets/style.css">
-  <title>Alpha_shop_cart</title>
 </head>
 
-<body>
-  <!-- Header -->
-  <header>
-    <div class="header-menu d-flex flex-column">
-      <!--加入下方這行input 漢堡選單-->
-      <input type="checkbox" name="navbar-toggle" id="navbar-toggle" class="d-none" />
-      <!-- 漢堡排 -->
-      <label for="navbar-toggle" class="navbar-toggle-label"><i class="fas fa-bars"></i></label>
-      </label>
-      <nav>
+<body class="theme">
+  <div class="main">
+    <header>
+      <!-- logo -->
+      <a href="#" class="logo">
+      <svg class="logo" width="170" height="60" viewBox="0 0 170 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path
+          d="M51.3531 33.6846H44.9348L43.6388 36.688H39.8331L46.6011 22.1851H49.6046L56.3931 36.688H52.6491L51.3531 33.6846ZM50.1394 30.8457L48.144 26.1966L46.1486 30.8457H50.1394Z"
+          fill="var(--logo)" />
+        <path d="M57.2518 22.1851H61.037V33.6229H67.2084V36.688H57.2518V22.1851Z" fill="var(--logo)" />
+        <path
+          d="M69.0241 22.1851H76.039C77.6436 22.1851 78.8916 22.5966 79.783 23.4194C80.6744 24.2286 81.1201 25.36 81.1201 26.8137C81.1201 28.2537 80.6676 29.3851 79.7624 30.208C78.871 31.0309 77.6299 31.4423 76.039 31.4423H72.8093V36.688H69.0241V22.1851ZM75.5247 28.6034C76.2241 28.6034 76.7384 28.4594 77.0676 28.1714C77.4104 27.8834 77.5819 27.4377 77.5819 26.8343C77.5819 26.2309 77.4104 25.7851 77.0676 25.4971C76.7384 25.1954 76.2241 25.0446 75.5247 25.0446H72.8093V28.6034H75.5247Z"
+          fill="var(--logo)" />
+        <path
+          d="M96.2763 22.1851V36.688H92.5735V30.8251H86.6489V36.688H82.946V22.1851H86.6489V27.8217H92.5735V22.1851H96.2763Z"
+          fill="var(--logo)" />
+        <path
+          d="M108.668 33.6846H102.25L100.954 36.688H97.1479L103.916 22.1851H106.919L113.708 36.688H109.964L108.668 33.6846ZM107.454 30.8457L105.459 26.1966L103.463 30.8457H107.454Z"
+          fill="var(--logo)" />
+        <path
+          d="M125.698 36.8731C124.615 36.8731 123.545 36.7291 122.489 36.4411C121.433 36.1531 120.576 35.7691 119.918 35.2891L121.09 32.6149C121.79 33.0537 122.537 33.3897 123.333 33.6229C124.128 33.856 124.93 33.9726 125.74 33.9726C126.562 33.9726 127.186 33.8629 127.612 33.6434C128.05 33.4103 128.27 33.088 128.27 32.6766C128.27 32.3063 128.071 32.0046 127.673 31.7714C127.289 31.5383 126.549 31.3051 125.452 31.072C124.094 30.784 123.031 30.4411 122.263 30.0434C121.495 29.6457 120.953 29.1794 120.638 28.6446C120.336 28.1097 120.185 27.4514 120.185 26.6697C120.185 25.7783 120.432 24.9829 120.926 24.2834C121.433 23.5703 122.14 23.0149 123.045 22.6171C123.964 22.2057 125.013 22 126.192 22C127.234 22 128.242 22.1509 129.216 22.4526C130.204 22.7406 130.972 23.1177 131.52 23.584L130.368 26.2583C129.052 25.3531 127.666 24.9006 126.213 24.9006C125.513 24.9006 124.951 25.0377 124.526 25.312C124.101 25.5726 123.888 25.9223 123.888 26.3611C123.888 26.6217 123.964 26.8343 124.114 26.9989C124.265 27.1634 124.546 27.328 124.958 27.4926C125.369 27.6434 125.98 27.8011 126.789 27.9657C128.105 28.2537 129.141 28.6034 129.895 29.0149C130.649 29.4126 131.184 29.8789 131.5 30.4137C131.815 30.9486 131.973 31.5863 131.973 32.3269C131.973 33.7531 131.424 34.8709 130.327 35.68C129.23 36.4754 127.687 36.8731 125.698 36.8731Z"
+          fill="var(--logo)" />
+        <path
+          d="M140.676 26.32C141.883 26.32 142.781 26.6834 143.371 27.4103C143.96 28.1234 144.255 29.2137 144.255 30.6811V36.688H140.593V30.8457C140.593 30.2423 140.484 29.8034 140.264 29.5291C140.059 29.2549 139.743 29.1177 139.318 29.1177C138.769 29.1177 138.331 29.296 138.001 29.6526C137.686 29.9954 137.528 30.4617 137.528 31.0514V36.688H133.867V22.1851H137.528V27.7806C137.899 27.3006 138.351 26.9371 138.886 26.6903C139.421 26.4434 140.017 26.32 140.676 26.32Z"
+          fill="var(--logo)" />
+        <path
+          d="M151.424 36.8526C150.313 36.8526 149.332 36.64 148.482 36.2149C147.645 35.776 146.994 35.1589 146.528 34.3634C146.075 33.568 145.849 32.6354 145.849 31.5657C145.849 30.496 146.075 29.5703 146.528 28.7886C146.994 27.9931 147.645 27.3829 148.482 26.9577C149.319 26.5326 150.299 26.32 151.424 26.32C152.548 26.32 153.529 26.5326 154.365 26.9577C155.202 27.3829 155.847 27.9931 156.299 28.7886C156.765 29.5703 156.999 30.496 156.999 31.5657C156.999 32.6354 156.765 33.568 156.299 34.3634C155.847 35.1589 155.202 35.776 154.365 36.2149C153.529 36.64 152.548 36.8526 151.424 36.8526ZM151.424 34.1166C152.727 34.1166 153.378 33.2663 153.378 31.5657C153.378 29.8651 152.727 29.0149 151.424 29.0149C150.121 29.0149 149.469 29.8651 149.469 31.5657C149.469 33.2663 150.121 34.1166 151.424 34.1166Z"
+          fill="var(--logo)" />
+        <path
+          d="M165.363 26.32C166.227 26.32 166.995 26.5463 167.667 26.9989C168.353 27.4377 168.881 28.0617 169.251 28.8709C169.635 29.68 169.827 30.6057 169.827 31.648C169.827 32.6903 169.635 33.6091 169.251 34.4046C168.881 35.1863 168.36 35.7897 167.688 36.2149C167.016 36.64 166.241 36.8526 165.363 36.8526C164.718 36.8526 164.122 36.7223 163.573 36.4617C163.038 36.2011 162.62 35.8514 162.318 35.4126V40.3909H158.657V26.5669H162.257V27.8629C162.545 27.3829 162.963 27.0057 163.512 26.7314C164.074 26.4571 164.691 26.32 165.363 26.32ZM164.252 34.1166C164.883 34.1166 165.363 33.904 165.692 33.4789C166.035 33.0537 166.206 32.4434 166.206 31.648C166.206 30.8114 166.035 30.1737 165.692 29.7349C165.349 29.2823 164.862 29.056 164.232 29.056C163.601 29.056 163.114 29.2754 162.771 29.7143C162.428 30.1531 162.257 30.784 162.257 31.6069C162.257 32.416 162.428 33.04 162.771 33.4789C163.114 33.904 163.608 34.1166 164.252 34.1166Z"
+          fill="var(--logo)" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M19.2748 28.8533C19.2748 28.8533 13.6747 37.9337 9.0833 37.9337C1.05245 37.9337 8.53664 20.635 14.3938 20.635C18.4808 20.635 19.2748 28.8533 19.2748 28.8533V28.8533Z"
+          fill="#F67599" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M25.9293 40.2729C24.334 41.9705 22.3649 43.2732 20.1784 44.0776C17.9919 44.882 15.648 45.166 13.3326 44.9071C11.0172 44.6482 8.79399 43.8535 6.83923 42.586C4.88446 41.3185 3.25192 39.6131 2.07104 37.6051C3.39867 39.4107 5.65044 40.6145 8.85237 40.6145C16.7401 40.6145 21.2175 34.485 21.2175 34.485C21.2175 34.485 21.6048 39.3294 25.9196 40.2729H25.9293Z"
+          fill="#F67599" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M28.2917 23.0588C29.4723 25.3145 30.0586 27.8337 29.9954 30.3787C29.9322 32.9238 29.2215 35.4108 27.9305 37.6051C26.9094 37.0323 26.1544 36.0811 25.8284 34.9568L24.1168 29.8293L28.2917 23.0588V23.0588Z"
+          fill="var(--logo)" />
+        <path fill-rule="evenodd" clip-rule="evenodd"
+          d="M15.0024 15.013C18.7639 15.0105 22.3885 16.4241 25.1548 18.9725L22.3141 23.5566C21.2858 20.8823 19.1968 18.2047 15.1325 18.2047C6.8088 18.2047 0.63923 27.2916 0.63923 32.9884C0.637396 33.7252 0.731462 34.459 0.919069 35.1715C0.0866864 32.9044 -0.185961 30.4699 0.124289 28.0748C0.434539 25.6798 1.31852 23.3951 2.7011 21.4148C4.08368 19.4345 5.92399 17.8173 8.06563 16.7004C10.2073 15.5836 12.5869 15.0003 15.0024 15V15.013Z"
+          fill="var(--logo)" />
+      </svg>
+      </a>
+      <input type="checkbox" class="navbar-toggle d-none " id="navbar-toggle">
+      <nav class="nav toggle-nav lg-d-none">
+        <!-- nav-item-list -->
         <ul class="nav-list">
-          <li class="nav-item"><a class="nav-link" href="#">男款</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">女款</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">最新消息</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">聯絡我們</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">客製商品</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">男款</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">女款</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">最新消息</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">客製商品</a></li>
+          <li class="nav-item"><a href="#" class="nav-link">聯絡我們</a></li>
+        </ul>
+        <ul class="nav-btn-list">
+          <li class="nav-btn cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.2297 18.4595C5.68458 18.4595 2 14.7749 2 10.2297C2 5.68458 5.68458 2 10.2297 2C14.7749 2 18.4595 5.68458 18.4595 10.2297C18.4595 12.1957 17.7701 14.0006 16.62 15.416L22.7506 21.5467C23.0831 21.8791 23.0831 22.4182 22.7506 22.7506C22.4182 23.0831 21.8791 23.0831 21.5467 22.7506L15.416 16.62C14.0006 17.7701 12.1957 18.4595 10.2297 18.4595ZM10.2297 16.7568C13.8345 16.7568 16.7568 13.8345 16.7568 10.2297C16.7568 6.62495 13.8345 3.7027 10.2297 3.7027C6.62495 3.7027 3.7027 6.62495 3.7027 10.2297C3.7027 13.8345 6.62495 16.7568 10.2297 16.7568Z"
+                fill="#2A2A2A" />
+            </svg>
+          </li>
+          <li class="nav-btn cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.68638 4.14285L5.35476 2.78357C5.09658 1.73512 4.17153 0.999938 3.11054 1H2V2.57142H3.11054C3.47355 2.56065 3.79474 2.80935 3.88175 3.16856L6.62725 14.5457L6.9126 15.7164C7.17282 16.7734 8.11035 17.5109 9.17995 17.4999H19.7378V15.9285H9.17995C8.81694 15.9393 8.49574 15.6906 8.40874 15.3314L8.3162 14.9385L19.7378 12.1964C20.5822 11.9964 21.246 11.3322 21.4576 10.4757L23 4.14285H5.68638ZM19.9923 10.0985C19.9209 10.3855 19.6973 10.6072 19.4139 10.6721L7.96144 13.4142L6.07198 5.71427H21.0643L19.9923 10.0985ZM5.85604 20.6428C5.85604 19.341 6.89189 18.2857 8.16967 18.2857C9.44745 18.2857 10.4833 19.341 10.4833 20.6428C10.4833 21.9446 9.44745 22.9999 8.16967 22.9999C6.89189 22.9999 5.85604 21.9446 5.85604 20.6428ZM7.39846 20.6428C7.39846 21.0767 7.74374 21.4285 8.16967 21.4285C8.59559 21.4285 8.94087 21.0767 8.94087 20.6428C8.94087 20.2089 8.59559 19.8571 8.16967 19.8571C7.74374 19.8571 7.39846 20.2089 7.39846 20.6428ZM15.2867 19.7408C15.6448 18.86 16.4884 18.2857 17.4242 18.2857C18.7019 18.2857 19.7378 19.341 19.7378 20.6428C19.7378 21.5962 19.1741 22.4557 18.3096 22.8205C17.445 23.1853 16.4499 22.9837 15.7882 22.3095C15.1265 21.6354 14.9285 20.6216 15.2867 19.7408ZM16.653 20.6428C16.653 21.0767 16.9982 21.4285 17.4242 21.4285C17.8501 21.4285 18.1954 21.0767 18.1954 20.6428C18.1954 20.2089 17.8501 19.8571 17.4242 19.8571C16.9982 19.8571 16.653 20.2089 16.653 20.6428Z" />
+            </svg>
+          </li>
+          <li class="nav-btn cursor-pointer">
+            <img src="./src/image/icon_mode_dark.svg" alt="vector_icon" class="theme-mode-dark">
+            <img src="./src/image/icon_mode_light.svg" alt="vector_icon" class=" theme-mode-light d-none">
+          </li>
+          </li>
         </ul>
       </nav>
-      <div class="header-actions d-flex justify-content-center">
-        <a href="#" class="header-link header-link-search px-3 d-flex align-items-center">
-        <i class="fas fa-search"></i>
-        </a>
-        <a href="#" class="header-link header-link-shopping-cart px-3 d-flex align-items-center">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-        <label for="dark-mode-toggle" class="header-link header-link-dark px-3 d-flex align-items-center">
-          <i class="fas fa-moon"></i>
-          <i class="fas fa-sun d-none"></i>
-        </label>
-        <input type="checkbox" name="dark-mode-toggle" id="dark-mode-toggle" class="d-none">
-        <!-- use JS to control the toggle of d-flex / d-none -->
-      </div>
-    </div>
-    <a href="#" class="brand d-flex align-items-center">
-      <img class="logo" src="./src/image/logo.png" alt="Logo">
-    </a>
-  </header>
-
-  <!-- main content -->
-  <main>
-    <form action="">
-      <!-- stepper -->
-      <div class="stepper-panel">
-        <h2 class="form-title">結帳</h2>
-        <div class="steps-wrapper d-flex justify-content-between">
-          <div class="step d-flex align-items-center active">
-            <div class="step-circle rounded-circle d-flex justify-content-center align-items-center">1</div>
-            <span class="step-label d-none">寄送地址</span>
-          </div>
-          <div class="step d-flex align-items-center">
-            <div class="step-circle rounded-circle d-flex justify-content-center align-items-center">2</div>
-            <span class="step-label d-none">運送方式</span>
-          </div>
-          <div class="step d-flex align-items-center">
-            <div class="step-circle rounded-circle d-flex justify-content-center align-items-center">3</div>
-            <span class="step-label d-none">付款資訊</span>
-          </div>
-          <span class="step-bar d-block"></span>
-          <span class="progress-line d-block"></span>
-        </div>
-      </div>
-
-      <!--form - delivery info 階段1-->
-      <div class="form-group">
-
-        <!-- form-part 1 -->
-        <div class="form-part">
-
-
-          <h2 class="form-title">寄送地址</h2>
-          <div class="form-row d-flex justify-content-between">
-            <div class="form-unit d-flex flex-column  flex-grow-1">
-              <label for="salutation">稱謂</label>
-              <div class="select-wrapper">
-                <select name="salutation" id="salutation">
-                  <option value="Mr">先生</option>
-                  <option value="Ms">小姐</option>
-                  <option value="Mx">Mx</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-unit d-flex flex-column  flex-grow-2">
-              <label for="name">姓名</label>
-              <input type="text" name="name" id="name" placeholder="請輸入姓名">
-            </div>
-          </div>
-          <div class="form-row d-flex flex-wrap justify-content-between">
-            <div class="form-unit d-flex flex-column flex-basis-100 flex-grow-1-pc">
-              <label for="phone">電話</label>
-              <input type="text" name="phone" id="phone" placeholder="請輸入行動電話">
-            </div>
-            <div class="form-unit d-flex flex-column flex-basis-100 flex-grow-1-pc">
-              <label for="email">Email</label>
-              <input type="text" name="email" id="email" placeholder="請輸入電子郵件">
-            </div>
-          </div>
-          <div class="form-row d-flex flex-wrap justify-content-between">
-            <div class="form-unit d-flex flex-column  flex-basis-100 flex-grow-1-pc">
-              <label for="city">縣市</label>
-              <div class="select-wrapper">
-                <select name="city" id="city" required>
-                  <option value="" disabled selected>請選擇縣市</option>
-                  <option value="">北部</option>
-                  <option value="">中部</option>
-                  <option value="">南部</option>
-                  <option value="">不拘</option>
-                </select>
-              </div>
-            </div>
-            <div class="form-unit d-flex flex-column  flex-basis-100 flex-grow-2-pc">
-              <label for="address">地址</label>
-              <input type="text" name="address" id="address" placeholder="請輸入地址">
-            </div>
-          </div>
-        </div>
-
-        <!--form - shipping address 階段2-->
-        <div class="form-part d-none form-part-shipping">
-          <h2 class="form-title">運送方式</h2>
-          <div class="form-row">
-            <input type="radio" name="shipping" id="standard-shipping" value="standard-shipping" class="d-none" checked
-              required>
-            <label for="standard-shipping"
-              class="shipping-option d-flex justify-content-between align-items-center rounded-1">
-              <div class="radio-circle"></div>
-              <div class="shipping-desc d-flex flex-column flex-grow-1">
-                <span class="shipping-subtitle d-inline-block">標準運送</span>
-                <span class="d-inline-block">約 3-7 個工作天</span>
-              </div>
-              <div class="shipping-fee price-wrapper">
-                <span>$</span>
-                <span class="subtotal">免費</span>
-              </div>
-            </label>
-          </div>
-          <!--shipping method02-->
-          <div class="form-row">
-            <input type="radio" name="shipping" id="DHL-shipping" value="DHL-shipping" class="d-none" required>
-            <label for="DHL-shipping"
-              class="shipping-option d-flex justify-content-between align-items-center rounded-1">
-              <div class="radio-circle"></div>
-              <div class="shipping-desc d-flex flex-column flex-grow-1">
-                <span class="shipping-subtitle d-inline-block">DHL 貨運</span>
-                <span class="d-inline-block">48 小時內送達</span>
-              </div>
-              <div class="shipping-fee price-wrapper">
-                <span>$</span>
-                <span class="subtotal">500</span>
-              </div>
-            </label>
-          </div>
-        </div>
-
-      <!--form - payment metod 階段3-->
-        <div class="form-part d-none">
-          <h2 class="form-title">付款資訊</h2>
-          <div class="form-row">
-            <div class="form-unit d-flex flex-column w-75">
-              <label for="credit-card-holder">持卡人姓名</label>
-              <input type="text" name="credit-card-holder" id="credit-card-holder" placeholder="John Doe">
-            </div>
-          </div>
-          <div class="form-row d-flex">
-            <div class="form-unit d-flex flex-column w-75">
-              <label for="credit-card-no">卡號</label>
-              <input type="text" name="credit-card-no" id="credit-card-no" placeholder="1111 2222 3333 4444">
-            </div>
-          </div>
-          <div class="form-row d-flex justify-content-between">
-            <div class="form-unit d-flex flex-column flex-grow-1">
-              <label for="credit-card-expiration">有效期限</label>
-              <input type="text" name="credit-card-expiration" id="credit-card-expiration" placeholder="MM / YY">
-            </div>
-            <div class="form-unit d-flex flex-column flex-grow-1">
-              <label for="CVC-CCV">CVC / CCV</label>
-              <input type="text" name="CVC-CCV" id="CVC-CCV" placeholder="123">
-            </div>
-          </div>
-        </div>
-      </div>
-      <!--form-ends-->
-
-        <!--checkout section-->
-      <div class="shopping-cart rounded-2 px-2 mb-4">
-        <div class="shopping-list py-2 d-flex flex-column">
-          <!-- user's shopping list will be shown here -->
-
-        </div>
-        <!--checkout product03-->
-        <div class="shipping-subtotal d-flex justify-content-between py-2">
-          <span>運費</span>
-          <span class="price-wrapper">
-            <span>$</span>
-            <span class="subtotal">免費</span>
-          </span>
-        </div>
-        <div class="shopping-price d-flex justify-content-between py-2">
-          <span>小計</span>
-          <div class="price-wrapper">
-            <span>$</span>
-            <span class="total-amount">0</span>
-          </div>
-        </div>
-      </div>
-
-      <!--next/prev button-->
-      <div class="btn-groups d-flex justify-content-between">
-        <div class="btn-wrapper flex-grow-1 w-0">
-          <button class="btn btn-previous d-none"><span class="arrow">&#8592;</span> 上一步</button>
-        </div>
-        <button class="btn btn-next rounded-2 flex-grow-1">下一步 <span class="arrow">&#8594;</span></button>
-        <button type="submit" class="btn btn-submit rounded-2 flex-grow-1 d-none">確認下單</button>
-      </div>
-    </form>
-  </main>
-
-  <!-- footer -->
-  <footer>
-    <div class="footer-container d-flex justify-content-between px-2">
-      <div class="footer-brand d-flex align-items-center">
-        <a href="#" class="brand d-flex align-items-center">
-          <img class="d-inline-block mr-1" src="./src/image/logo.png" alt="Alpha Camp logo">
-        </a>
-      </div>
-      <div class="footer-column">
-        <h2 class="footer-title">客戶服務</h2>
-        <ul class="footer-list">
-          <li class="footer-item"><a href="#" class="footer-link">運送說明</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">退換貨相關</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">付款資訊</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">FAQ</a></li>
+<!--加入下方這行input 漢堡選單-->
+      <label class="navbar-toggle-label cursor-pointer lg-d-none" for="navbar-toggle">
+        <img src="./src/image/icon_menu.svg" alt="hamburger">
+      </label>
+      <div class="md-d-none lg-nav">
+        <ul class="nav-list">
+          <li class="lg-nav-item"><a href="#" class="nav-link">男款</a></li>
+          <li class="lg-nav-item"><a href="#" class="nav-link">女款</a></li>
+          <li class="lg-nav-item"><a href="#" class="nav-link">最新消息</a></li>
+          <li class="lg-nav-item"><a href="#" class="nav-link">客製商品</a></li>
+          <li class="lg-nav-item"><a href="#" class="nav-link">聯絡我們</a></li>
         </ul>
-      </div>
-      <div class="footer-column">
-        <h2 class="footer-title">關於我們</h2>
-        <ul class="footer-list">
-          <li class="footer-item"><a href="#" class="footer-link">品牌故事</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">媒體聯繫</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">Press kit</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h2 class="footer-title">資訊</h2>
-        <ul class="footer-list">
-          <li class="footer-item"><a href="#" class="footer-link">隱私權政策</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">Cookie</a></li>
-          <li class="footer-item"><a href="#" class="footer-link">GDPR</a></li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h2 class="footer-title">追蹤 ALPHA Shop</h2>
-        <ul class="footer-list">
-          <li class="footer-item">+886 02123-45678</li>
-          <li class="footer-item">
-            <a href="#" class="footer-link"><i class="fab fa-facebook-f"></i></a>
-            <a href="#" class="footer-link mx-2"><i class="fab fa-instagram"></i></a>
-            <a href="#" class="footer-link"><i class="fab fa-whatsapp"></i></a>
+        <ul class="nav-btn-list">
+          <li class="nav-btn cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M10.2297 18.4595C5.68458 18.4595 2 14.7749 2 10.2297C2 5.68458 5.68458 2 10.2297 2C14.7749 2 18.4595 5.68458 18.4595 10.2297C18.4595 12.1957 17.7701 14.0006 16.62 15.416L22.7506 21.5467C23.0831 21.8791 23.0831 22.4182 22.7506 22.7506C22.4182 23.0831 21.8791 23.0831 21.5467 22.7506L15.416 16.62C14.0006 17.7701 12.1957 18.4595 10.2297 18.4595ZM10.2297 16.7568C13.8345 16.7568 16.7568 13.8345 16.7568 10.2297C16.7568 6.62495 13.8345 3.7027 10.2297 3.7027C6.62495 3.7027 3.7027 6.62495 3.7027 10.2297C3.7027 13.8345 6.62495 16.7568 10.2297 16.7568Z" />
+            </svg>
+          </li>
+          <li class="nav-btn cursor-pointer">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M5.68638 4.14285L5.35476 2.78357C5.09658 1.73512 4.17153 0.999938 3.11054 1H2V2.57142H3.11054C3.47355 2.56065 3.79474 2.80935 3.88175 3.16856L6.62725 14.5457L6.9126 15.7164C7.17282 16.7734 8.11035 17.5109 9.17995 17.4999H19.7378V15.9285H9.17995C8.81694 15.9393 8.49574 15.6906 8.40874 15.3314L8.3162 14.9385L19.7378 12.1964C20.5822 11.9964 21.246 11.3322 21.4576 10.4757L23 4.14285H5.68638ZM19.9923 10.0985C19.9209 10.3855 19.6973 10.6072 19.4139 10.6721L7.96144 13.4142L6.07198 5.71427H21.0643L19.9923 10.0985ZM5.85604 20.6428C5.85604 19.341 6.89189 18.2857 8.16967 18.2857C9.44745 18.2857 10.4833 19.341 10.4833 20.6428C10.4833 21.9446 9.44745 22.9999 8.16967 22.9999C6.89189 22.9999 5.85604 21.9446 5.85604 20.6428ZM7.39846 20.6428C7.39846 21.0767 7.74374 21.4285 8.16967 21.4285C8.59559 21.4285 8.94087 21.0767 8.94087 20.6428C8.94087 20.2089 8.59559 19.8571 8.16967 19.8571C7.74374 19.8571 7.39846 20.2089 7.39846 20.6428ZM15.2867 19.7408C15.6448 18.86 16.4884 18.2857 17.4242 18.2857C18.7019 18.2857 19.7378 19.341 19.7378 20.6428C19.7378 21.5962 19.1741 22.4557 18.3096 22.8205C17.445 23.1853 16.4499 22.9837 15.7882 22.3095C15.1265 21.6354 14.9285 20.6216 15.2867 19.7408ZM16.653 20.6428C16.653 21.0767 16.9982 21.4285 17.4242 21.4285C17.8501 21.4285 18.1954 21.0767 18.1954 20.6428C18.1954 20.2089 17.8501 19.8571 17.4242 19.8571C16.9982 19.8571 16.653 20.2089 16.653 20.6428Z" />
+            </svg>
+          </li>
+          <li class="nav-btn cursor-pointer theme-mode-toggle" id="theme-mode-toggle">
+            <img src="src/image/icon_mode_dark.svg" id="theme-mode-dark" alt="vector_icon">
+            <img src="src/image/icon_mode_light.svg" id="theme-mode-light" alt="vector_icon" class=" d-none">
           </li>
         </ul>
       </div>
+    </header>
+    <!-- main container -->
+    <div class="container">
+      <div class="title">
+        <h2>結帳</h2>
+      </div>
+      <div class="grid-wrap">
+        <div class="steps-form">
+          <form id="a-form">
+            <div class="steps-form-steps-container" id="step-control">
+              <div class="steps-item step steps-item-process">
+                <div class="steps-item-icon">
+                  <span class="steps-item-icon-number">1</span>
+                  <span class="steps-item-icon-checked"><img src="src/image/icon_checked.svg" alt="checked"></span>
+                </div>
+                <div class="steps-item-content">寄送地址</div>
+              </div>
+              <div class="steps-item step steps-item-wait">
+                <div class="steps-item-icon">
+                  <span class="steps-item-icon-number">2</span>
+                  <span class="steps-item-icon-checked"><img src="src/image/icon_checked.svg" alt="checked"></span>
+                </div>
+                <div class="steps-item-content steps-item-wait">運送方式</div>
+              </div>
+              <div class="steps-item step steps-item-wait">
+                <div class="steps-item-icon">
+                  <span class="steps-item-icon-number">3</span>
+                  <span class="steps-item-icon-checked"><img src="src/image/icon_checked.svg" alt="checked"></span>
+                </div>
+                <div class="steps-item-content">付款資訊</div>
+              </div>
+            </div>
+            <!--form - delivery info 階段1-->
+            <div class="part ">
+              <div class="steps-form-container form-address">
+                <h3>寄送地址</h3>
+                <div class="form-row">
+                  <div class="form-item w-4-12 form-selector">
+                    <div class="form-item-label">尊稱</div>
+                    <div class="form-item-select">
+                      <select name="a-type" id="a-type">
+                        <option value="male" selected="">先生</option>
+                        <option value="female">女士</option>
+                        <option value="none">不拘</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-item flex-1">
+                    <div class="form-item-label">姓名</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="請輸入姓名">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-item md-w-12-12 lg-flex-1 lg-mr-15 md-form-full">
+                    <div class="form-item-label ">電話</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="請輸入行動電話">
+                    </div>
+                  </div>
+                  <div class="form-item md-w-12-12 lg-flex-1 lg-ml-15">
+                    <div class="form-item-label">Email</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="請輸入電子郵件">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row">
+                  <div class="form-item form-selector md-w-12-12 md-form-full">
+                    <div class="form-item-label">縣市</div>
+                    <div class="form-item-select">
+                      <select name="a-type" id="a-location" required>
+                        <option value="" disabled selected>請選擇縣市</option>
+                        <option value="">北部</option>
+                        <option value="">中部</option>
+                        <option value="">南部</option>
+                        <option value="">不拘</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="form-item flex-1">
+                    <div class="form-item-label">地址</div>
+                    <div class="form-item-input">
+                      <input id="address" type="text" placeholder="請輸入地址">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <!--form - shipping address 階段2-->
+            <div class="part d-none">
+              <div class="steps-form-container form-delivery">
+                <h3>運送方式</h3>
+                <div class="d-flex" id="shipping-fee">
+                  <!--shipping method02-->
+                  <div class="shipping-way">
+                    <input id="common" name="shipping" type="radio" value="common" checked>
+                    <label class="ship-item" for="common">
+                      <div class="circle-icon"></div>
+                      <div class="shipping-type">
+                        <p class="type-title">標準配送</p>
+                        <p class="delivery">約3~7個工作天</p>
+                      </div>
+                      <div class="shipping-fee">免費</div>
+                    </label>
+                  </div>
+                  <!--shipping method02-->
+                  <div class="shipping-way">
+                    <input id="dhl" name="shipping" type="radio" value="dhl">
+                    <label class="ship-item mark2" for="dhl">
+                      <div class="circle-icon"></div>
+                      <div class="shipping-type">
+                        <p class="type-title">DHL 貨運</p>
+                        <p class="delivery">48小時內送達</p>
+                      </div>
+                      <div class="shipping-fee">$500</div>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+              <!--form - payment metod 階段3-->
+            <div class="part d-none">
+              <div class="steps-form-container form-payment">
+                <h3>付款資訊</h3>
+                <div class="form-row lg-w-9-12">
+                  <div class="form-item flex-1">
+                    <div class="form-item-label">持卡人姓名</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="請輸入名字">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row lg-w-9-12">
+                  <div class="form-item flex-1">
+                    <div class="form-item-label">卡號</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="1111 2222 3333 4444">
+                    </div>
+                  </div>
+                </div>
+                <div class="form-row ">
+                  <div class="form-item md-w-12-12 lg-flex-1 lg-mr-15 md-form-full">
+                    <div class="form-item-label">有效期限</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="MM/YY">
+                    </div>
+                  </div>
+                  <div class="form-item md-w-12-12 lg-flex-1 lg-ml-15">
+                    <div class="form-item-label">CVC / CCV</div>
+                    <div class="form-item-input">
+                      <input type="text" placeholder="123">
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </form>
+        </div>
+        <!--form-ends-->
+
+        <!--checkout section-->
+        <div class="cart-container" id="cart-order">
+          <div class="cart-item">
+            <div class="item-img">
+              <img src="src/image/product_01.jpg" alt="product_01">
+            </div>
+            <div class="item-counter">
+              <div class="item-counter-content">
+                <div class="counter-name">
+                  破壞補丁修身牛仔褲
+                </div>
+                <div class="counter">
+                  <button class="counter-btn goods-loss ">-</button>
+                  <input class="counter-num" type="number" value="1" id="product-01-num">
+                  <button class="counter-btn goods-add">+</button>
+                </div>
+              </div>
+              <div class="couter-price">
+                $<span>3999</span>
+              </div>
+            </div>
+          </div>
+          <div class="cart-item">
+            <div class="item-img">
+              <img src="src/image/product_02.jpg" alt="product_01">
+            </div>
+            <div class="item-counter">
+              <div class="item-counter-content">
+                <div class="counter-name">
+                  刷色直筒牛仔褲
+                </div>
+                <div class="counter">
+                  <button class="counter-btn goods-loss">-</button>
+                  <input class="counter-num" type="number" value="1" id="product-01-num">
+                  <button class="counter-btn goods-add">+</button>
+                </div>
+              </div>
+              <div class="couter-price">
+                $<span>1299</span>
+              </div>
+            </div>
+          </div>
+          <div class="cart-price">
+            <div class="cart-price-list cart-fee">
+              <div class="cart-price-label">運費</div>
+              <div class="cart-price-label" id="charge-type">免運</div>
+            </div>
+            <div class="cart-price-list cart-fee">
+              <div class="cart-price-label">小計</div>
+              <div class="cart-price-label" id="amount-total">$ 4,000</div>
+            </div>
+          </div>
+        </div>
+
+        <!--next/prev button-->
+        <div class="btn-container btn-control" id="btn-control">
+          <button class="btn btn-previous btn-prev" id="btn-prev" disabled="disabled">
+          <span class="arrow">&#8592;</span>
+          上一步
+          </button>
+          <button class="btn btn-primary btn-next" id="btn-next">
+          下一步
+          <span class="arrow">&#8594;</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!--footer-->
+  <footer class="footer md-d-none">
+    <div class="container">
+      <div class="footr-logo">
+        <svg class="logo" width="170" height="60" viewBox="0 0 170 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M51.3531 33.6846H44.9348L43.6388 36.688H39.8331L46.6011 22.1851H49.6046L56.3931 36.688H52.6491L51.3531 33.6846ZM50.1394 30.8457L48.144 26.1966L46.1486 30.8457H50.1394Z"
+            fill="var(--logo)" />
+          <path d="M57.2518 22.1851H61.037V33.6229H67.2084V36.688H57.2518V22.1851Z" fill="var(--logo)" />
+          <path
+            d="M69.0241 22.1851H76.039C77.6436 22.1851 78.8916 22.5966 79.783 23.4194C80.6744 24.2286 81.1201 25.36 81.1201 26.8137C81.1201 28.2537 80.6676 29.3851 79.7624 30.208C78.871 31.0309 77.6299 31.4423 76.039 31.4423H72.8093V36.688H69.0241V22.1851ZM75.5247 28.6034C76.2241 28.6034 76.7384 28.4594 77.0676 28.1714C77.4104 27.8834 77.5819 27.4377 77.5819 26.8343C77.5819 26.2309 77.4104 25.7851 77.0676 25.4971C76.7384 25.1954 76.2241 25.0446 75.5247 25.0446H72.8093V28.6034H75.5247Z"
+            fill="var(--logo)" />
+          <path
+            d="M96.2763 22.1851V36.688H92.5735V30.8251H86.6489V36.688H82.946V22.1851H86.6489V27.8217H92.5735V22.1851H96.2763Z"
+            fill="var(--logo)" />
+          <path
+            d="M108.668 33.6846H102.25L100.954 36.688H97.1479L103.916 22.1851H106.919L113.708 36.688H109.964L108.668 33.6846ZM107.454 30.8457L105.459 26.1966L103.463 30.8457H107.454Z"
+            fill="var(--logo)" />
+          <path
+            d="M125.698 36.8731C124.615 36.8731 123.545 36.7291 122.489 36.4411C121.433 36.1531 120.576 35.7691 119.918 35.2891L121.09 32.6149C121.79 33.0537 122.537 33.3897 123.333 33.6229C124.128 33.856 124.93 33.9726 125.74 33.9726C126.562 33.9726 127.186 33.8629 127.612 33.6434C128.05 33.4103 128.27 33.088 128.27 32.6766C128.27 32.3063 128.071 32.0046 127.673 31.7714C127.289 31.5383 126.549 31.3051 125.452 31.072C124.094 30.784 123.031 30.4411 122.263 30.0434C121.495 29.6457 120.953 29.1794 120.638 28.6446C120.336 28.1097 120.185 27.4514 120.185 26.6697C120.185 25.7783 120.432 24.9829 120.926 24.2834C121.433 23.5703 122.14 23.0149 123.045 22.6171C123.964 22.2057 125.013 22 126.192 22C127.234 22 128.242 22.1509 129.216 22.4526C130.204 22.7406 130.972 23.1177 131.52 23.584L130.368 26.2583C129.052 25.3531 127.666 24.9006 126.213 24.9006C125.513 24.9006 124.951 25.0377 124.526 25.312C124.101 25.5726 123.888 25.9223 123.888 26.3611C123.888 26.6217 123.964 26.8343 124.114 26.9989C124.265 27.1634 124.546 27.328 124.958 27.4926C125.369 27.6434 125.98 27.8011 126.789 27.9657C128.105 28.2537 129.141 28.6034 129.895 29.0149C130.649 29.4126 131.184 29.8789 131.5 30.4137C131.815 30.9486 131.973 31.5863 131.973 32.3269C131.973 33.7531 131.424 34.8709 130.327 35.68C129.23 36.4754 127.687 36.8731 125.698 36.8731Z"
+            fill="var(--logo)" />
+          <path
+            d="M140.676 26.32C141.883 26.32 142.781 26.6834 143.371 27.4103C143.96 28.1234 144.255 29.2137 144.255 30.6811V36.688H140.593V30.8457C140.593 30.2423 140.484 29.8034 140.264 29.5291C140.059 29.2549 139.743 29.1177 139.318 29.1177C138.769 29.1177 138.331 29.296 138.001 29.6526C137.686 29.9954 137.528 30.4617 137.528 31.0514V36.688H133.867V22.1851H137.528V27.7806C137.899 27.3006 138.351 26.9371 138.886 26.6903C139.421 26.4434 140.017 26.32 140.676 26.32Z"
+            fill="var(--logo)" />
+          <path
+            d="M151.424 36.8526C150.313 36.8526 149.332 36.64 148.482 36.2149C147.645 35.776 146.994 35.1589 146.528 34.3634C146.075 33.568 145.849 32.6354 145.849 31.5657C145.849 30.496 146.075 29.5703 146.528 28.7886C146.994 27.9931 147.645 27.3829 148.482 26.9577C149.319 26.5326 150.299 26.32 151.424 26.32C152.548 26.32 153.529 26.5326 154.365 26.9577C155.202 27.3829 155.847 27.9931 156.299 28.7886C156.765 29.5703 156.999 30.496 156.999 31.5657C156.999 32.6354 156.765 33.568 156.299 34.3634C155.847 35.1589 155.202 35.776 154.365 36.2149C153.529 36.64 152.548 36.8526 151.424 36.8526ZM151.424 34.1166C152.727 34.1166 153.378 33.2663 153.378 31.5657C153.378 29.8651 152.727 29.0149 151.424 29.0149C150.121 29.0149 149.469 29.8651 149.469 31.5657C149.469 33.2663 150.121 34.1166 151.424 34.1166Z"
+            fill="var(--logo)" />
+          <path
+            d="M165.363 26.32C166.227 26.32 166.995 26.5463 167.667 26.9989C168.353 27.4377 168.881 28.0617 169.251 28.8709C169.635 29.68 169.827 30.6057 169.827 31.648C169.827 32.6903 169.635 33.6091 169.251 34.4046C168.881 35.1863 168.36 35.7897 167.688 36.2149C167.016 36.64 166.241 36.8526 165.363 36.8526C164.718 36.8526 164.122 36.7223 163.573 36.4617C163.038 36.2011 162.62 35.8514 162.318 35.4126V40.3909H158.657V26.5669H162.257V27.8629C162.545 27.3829 162.963 27.0057 163.512 26.7314C164.074 26.4571 164.691 26.32 165.363 26.32ZM164.252 34.1166C164.883 34.1166 165.363 33.904 165.692 33.4789C166.035 33.0537 166.206 32.4434 166.206 31.648C166.206 30.8114 166.035 30.1737 165.692 29.7349C165.349 29.2823 164.862 29.056 164.232 29.056C163.601 29.056 163.114 29.2754 162.771 29.7143C162.428 30.1531 162.257 30.784 162.257 31.6069C162.257 32.416 162.428 33.04 162.771 33.4789C163.114 33.904 163.608 34.1166 164.252 34.1166Z"
+            fill="var(--logo)" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M19.2748 28.8533C19.2748 28.8533 13.6747 37.9337 9.0833 37.9337C1.05245 37.9337 8.53664 20.635 14.3938 20.635C18.4808 20.635 19.2748 28.8533 19.2748 28.8533V28.8533Z"
+            fill="#F67599" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M25.9293 40.2729C24.334 41.9705 22.3649 43.2732 20.1784 44.0776C17.9919 44.882 15.648 45.166 13.3326 44.9071C11.0172 44.6482 8.79399 43.8535 6.83923 42.586C4.88446 41.3185 3.25192 39.6131 2.07104 37.6051C3.39867 39.4107 5.65044 40.6145 8.85237 40.6145C16.7401 40.6145 21.2175 34.485 21.2175 34.485C21.2175 34.485 21.6048 39.3294 25.9196 40.2729H25.9293Z"
+            fill="#F67599" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M28.2917 23.0588C29.4723 25.3145 30.0586 27.8337 29.9954 30.3787C29.9322 32.9238 29.2215 35.4108 27.9305 37.6051C26.9094 37.0323 26.1544 36.0811 25.8284 34.9568L24.1168 29.8293L28.2917 23.0588V23.0588Z"
+            fill="var(--logo)" />
+          <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M15.0024 15.013C18.7639 15.0105 22.3885 16.4241 25.1548 18.9725L22.3141 23.5566C21.2858 20.8823 19.1968 18.2047 15.1325 18.2047C6.8088 18.2047 0.63923 27.2916 0.63923 32.9884C0.637396 33.7252 0.731462 34.459 0.919069 35.1715C0.0866864 32.9044 -0.185961 30.4699 0.124289 28.0748C0.434539 25.6798 1.31852 23.3951 2.7011 21.4148C4.08368 19.4345 5.92399 17.8173 8.06563 16.7004C10.2073 15.5836 12.5869 15.0003 15.0024 15V15.013Z"
+            fill="var(--logo)" />
+        </svg>
+      </div>
+      <!--footer section 01-->
+      <div class="footer-info">
+        <div class="footer-info-part">
+          <h3 class="footer-info-title">客戶服務</h3>
+          <ul class="footer-item">
+            <li><a href="#">運送說明</a></li>
+            <li><a href="#">退換貨相關</a></li>
+            <li><a href="#">付款資訊</a></li>
+            <li><a href="#">FAQ</a></li>
+          </ul>
+        </div>
+        <!--footer section 02-->
+        <div class="footer-info-part">
+          <h3 class="footer-info-title">關於我們</h3>
+          <ul class="footer-item">
+            <li><a href="#">品牌故事</a></li>
+            <li><a href="#">媒體聯繫</a></li>
+            <li><a href="#">Press kit</a></li>
+          </ul>
+        </div>
+        <!--footer section 03-->
+        <div class="footer-info-part">
+          <h3 class="footer-info-title">資訊</h4>
+            <ul class="footer-item">
+              <li><a href="#">隱私權資訊</a></li>
+              <li><a href="#">Cookie</a></li>
+              <li><a href="#">GDPR</a></li>
+            </ul>
+        </div>
+      </div>
+        <!--footer section 04-->
+      <div class="footer-link">
+        <h3 class="footer-info-title">追蹤ALPHA SHOP</h3>
+        <div class="footer-link-phone">
+          <a>+886 02123-45678</a>
+        </div>
+        <div class="footer-social">
+          <img class="footer-social-icon" src="src/image/icon_fb.svg" alt="">
+          <img class="footer-social-icon" src="src/image/icon_ig.svg" alt="">
+          <img class="footer-social-icon" src="src/image/icon_whatsapp.svg" alt="">
+        </div>
+      </div>
     </div>
   </footer>
-
-  <script src="main.js"></script>
 </body>
+<script src="main.js" charset="utf-8"></script>
 
 </html>
