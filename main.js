@@ -90,7 +90,7 @@ function shippingTotal(e) {
     type = "免運";
     commonFee.classList.remove("mark");
     dhlFee.classList.add("mark2");
-  } else {
+  } else { 
     if (e.target.matches(".mark2")) {
       total += 500;
       type = "$500";
