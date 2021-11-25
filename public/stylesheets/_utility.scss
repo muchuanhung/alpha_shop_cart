@@ -50,7 +50,6 @@ $sizes: (
 }
 
 // all screen size
-
 .flex-1 {
   flex: 1 1;
 }
@@ -72,7 +71,6 @@ $sizes: (
 }
 
 //md(<54em) only
-
 @media screen and (max-width: $md) {
   @each $prop, $abbrev in (width: w) {
     @each $num, $val in $sizes {
@@ -87,7 +85,6 @@ $sizes: (
 }
 
 //lg(>54em) only
-
 @media screen and (min-width: $md) {
   @each $prop, $abbrev in (width: w) {
     @each $num, $val in $sizes {
