@@ -18,4 +18,4 @@ shop-cart-template
 - JavaScript (ES6)
 - Flex/Grid
 - RWD
-- Scss
+- Sass
