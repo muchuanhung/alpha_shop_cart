@@ -81,7 +81,7 @@ function setBtnDisabled() {
   //   nextBtn.innerHTML = "確認下單";
   // } else {
   //   nextBtn.innerHTML = "下一步 →";
-  // }
+  // } 
 }
 
 function shippingTotal(e) {
